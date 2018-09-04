@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"></meta>
+	<title>Armaduras Argentinas</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'></link>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="/css/styleResumenPeso.css"></link>
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+	<link rel="shortcut icon" type="image/x-icon" href="/images/logo_aa_ico.ico"></link>
+</head>
+<body style="background-color:#7d7c7c">
+	<div class="resumenDePeso">
+		<table class="resumen">
+			<tr>
+				<td>&emsp;</td>
+				<td style="text-align:left;">TELEFONO</td>
+				<td>&emsp;</td>
+			</tr>
+			<tr>
+				<td>&emsp;</td>
+				<td style="text-align:left;">MAIL</td>
+				<td>&emsp;</td>
+			</tr>
+			<tr>
+				<td>&emsp;</td>
+				<td style="text-align:left;">FECHA</td>
+				<td>&emsp;</td>
+			</tr>
+			<tr>
+				<td style="text-align:left;">CLIENTE</td>
+				<td th:text="'&emsp;&emsp;' + ${pedido[0].cliente}"></td>
+			</tr>
+			<tr>
+				<td style="text-align:left;">OBRA</td>
+				<td th:text="'&emsp;&emsp;' + ${pedido[0].obra}"></td>
+			</tr>
+			<tr>
+				<td style="text-align:left;">PLANO</td>
+				<td th:text="'&emsp;&emsp;' + ${pedido[0].descripcion}"></td>
+			</tr>
+			<tr>
+				<td style="text-align:left;">OC</td>
+				<td th:text="'&emsp;&emsp;' + ${pedido[0].oc}"></td>
+			</tr>
+		</table>
+		<table class="resumen1">
+			<tr>
+				<td style="text-align:left;">PEDIDO</td>
+				<td style="text-align:left;" th:text="'&emsp;' + ${pedido[0].codigo}"></td>
+				<td style="text-align:center;border:solid 3px black;" th:text="'&emsp;' + ${pedido[0].tipo} + '&emsp;'"></td>
+			</tr>
+		</table>
+		<table class="resumen2">
+			<tr>
+				<strong><td style="font-weight: bolder;">DESCRIPCION</td></strong>
+			</tr>
+			<tr>
+				<td th:text="${pedido[0].descripcion}"></td>
+			</tr>
+		</table>
+		<table class="resumen3">
+			<tr>
+				<strong><td style="font-weight: bolder;">Ø</td></strong>
+				<strong><td style="font-weight: bolder;">LONGITUD TOTAL</td></strong>
+				<strong><td style="font-weight: bolder;">PESO (kg)</td></strong>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td th:text="${contSeis} + '&emsp;'" style="text-align: right;"></td>
+				<td th:text="${pedido[0].seis} + '&emsp;'" style="text-align: right;"></td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td th:text="${contOcho} + '&emsp;'" style="text-align: right;"></td>
+				<td th:text="${pedido[0].ocho} + '&emsp;'" style="text-align: right;"></td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td th:text="${contDiez} + '&emsp;'" style="text-align: right;"></td>
+				<td th:text="${pedido[0].diez} + '&emsp;'" style="text-align: right;"></td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td th:text="${contDoce} + '&emsp;'" style="text-align: right;"></td>
+				<td th:text="${pedido[0].doce} + '&emsp;'" style="text-align: right;"></td>
+			</tr>
+			<tr>
+				<td>16</td>
+				<td th:text="${contDieciseis} + '&emsp;'" style="text-align: right;"></td>
+				<td th:text="${pedido[0].dieciseis} + '&emsp;'" style="text-align: right;"></td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td th:text="${contVeinte} + '&emsp;'" style="text-align: right;"></td>
+				<td th:text="${pedido[0].veinte} + '&emsp;'" style="text-align: right;"></td>
+			</tr>
+			<tr>
+				<td>25</td>
+				<td th:text="${contVeinticinco} + '&emsp;'" style="text-align: right;"></td>
+				<td th:text="${pedido[0].veinticinco} + '&emsp;'" style="text-align: right;"></td>
+			</tr>
+			<tr>
+				<td>32</td>
+				<td th:text="${contTreintaydos} + '&emsp;'" style="text-align: right;"></td>
+				<td th:text="${pedido[0].treintaydos} + '&emsp;'" style="text-align: right;"></td>
+			</tr>
+			<tr style="border: 3px solid black;">
+				<strong><td style="font-weight: bolder;">OTROS</td></strong>
+				<td th:text="${largoAngulos} + '&emsp;'" style="text-align: right;"></td>
+				<td th:text="${pesoAngulos} + '&emsp;'" style="text-align: right;"></td>
+			</tr>
+			<tr style="border: 3px solid black;">
+				<td >TOTAL</td>
+				<td th:text="${largoTotal} + '&emsp;'" style="text-align: right;"></td>
+				<td style="text-align: right;" th:text="${pedido[0].totalKg} + '&emsp;'"></td>
+			</tr>
+		</table>
+		<table class="resumen4">
+			<tr>
+				<td style="border: 3px solid black">OBSERVACIONES</td>
+			</tr>
+			<tr height="80px">
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

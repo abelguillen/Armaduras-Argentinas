@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<div class="container-fluid">
+
+			<div class="col-md-8">
+				<ul class="list-unstyled">
+					<li><a href="/cliente"><img src="/images/profle.png"
+							alt="" width="90px"></img>Cliente / Obra</a></li>
+					<li><a href="/planosectorsubsector"><img
+							src="/images/monitor.png" alt="" width="90px"></img>Plano /
+							Sector / Subsector</a></li>
+					<li><a href="/oficinatecnica"><img src="/images/cart.png"
+							alt="" width="90px"></img>Oficina técnica</a></li>
+				</ul>
+			</div>
+			<div id="paleta" class="col-md-4">
+				<h2 style="text-align: center; font-size: 2em;">Plano / Sector
+					/ Subsector</h2>
+				<ul class="list-unstyled">
+					<li id="cambiarcosas"><a
+						href="/planosectorsubsector/nuevoplano"
+						style="padding-left: 20px; color: white;">Nuevo Plano</a></li>
+					<li id="cambiarcosas"><a href="/plano/listadeplanos"
+						style="padding-left: 20px; color: white;">Lista de Planos</a></li>
+					<li id="cambiarcosas"><a
+						href="/planosectorsubsector/nuevosector"
+						style="padding-left: 20px; color: white;">Nuevo Sector</a></li>
+					<li id="cambiarcosas"><a href="/sector/listadesectores"
+						style="padding-left: 20px; color: white;">Lista de Sectores</a></li>
+					<li id="cambiarcosas"><a
+						href="/planosectorsubsector/nuevosubsector"
+						style="padding-left: 20px; color: white;">Nuevo Subsector</a></li>
+					<li id="cambiarcosas"><a href="/subsector/listadesubsectores"
+						style="padding-left: 20px; color: white;">Lista de Subsectores</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>

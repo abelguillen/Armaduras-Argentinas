@@ -1,0 +1,85 @@
+div#input {
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	box-shadow: 0 0 2px rgba(0,0,0,0.38),0 1px 3px rgba(0,0,0,0.32);
+}
+::-webkit-input-placeholder {
+   text-align: center;
+}
+input[type="email"] {
+	margin-left: 48px;
+	padding-left: 3px;
+	border-radius: 5px;
+    height: 36px;
+	width: 80%;
+}
+input[type="password"] {
+	margin-left: 48px;
+	padding-left: 3px;
+	border-radius: 5px;
+    height: 36px;
+	width: 80%;
+}
+button#Ingresar {
+	margin-left: 48px;
+	font-weight: bold;
+	font-size: 15px;
+	color:#ffffff;
+	background-color:#c11b21;
+	border: 1px solid #920c12;
+	height: 36px;
+	width: 80%;
+	cursor: pointer;
+}
+#cuadrado{
+	background-color:black;
+	background-size:150%, 100%;
+   	background-repeat: no-repeat;
+	border-radius: 7px;
+	padding-bottom: 20px;
+}
+#cuadrogral{
+	background-color:black;
+	padding-top: 12%;
+	padding-bottom: 15%;
+	background-size:100%, 100%;
+   	background-repeat: no-repeat;
+}}
+form {
+	text-align: center;
+	height: 50%;
+	padding-left: 8%; /*(100%-60%)/2*/
+	padding-top: 8%;
+	padding-bottom: 8%;
+	padding-right: 8%;
+}
+p#terminos{
+	font-size: 10px;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 10px;
+}
+#logoPreHome{
+	margin-top: -20px;
+	margin-left: 35%;
+	width: 150px;
+	height: 130px;
+	border-radius: 10%;
+}
+h1#nombreForm{
+	font-family: monospace;
+	text-align: center;
+	color: #ffffff;
+}
+h4#extra{
+	text-align: center;
+	color: #ffffff;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+a#Registrarse{
+	font-size:15px;
+	color: #bbb8b9;
+	padding-left:41%;
+}

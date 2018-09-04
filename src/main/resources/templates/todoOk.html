@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body>
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div style="text-align: center">​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+					<h4>Carga completa.</h4>
+					<a class="btn btn-default" th:href="'/productos/nuevoItem/'+ ${idPedido}">NUEVO ITEM</a> 
+					<a class="btn btn-default" th:href="'/productos/items/'+ ${idPedido}">VER ITEMS</a>
+				</div>
+				​
+			</div>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>

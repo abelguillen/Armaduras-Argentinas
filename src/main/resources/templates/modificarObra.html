@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+<body class="container-fluid" style="overflow: scroll;">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black; background-color: indianred; padding: 10px;"
+			class="nav">
+			<a style="text-decoration: none;" href="/">Home&emsp;></a><span><a
+				style="text-decoration: none;" href="/cliente">&emsp;Clientes /
+					Obras&emsp;></a></span><span><a style="text-decoration: none;"
+				href="/obra/listadeobras">&emsp;Lista de Obras</a></span>
+		</h3>
+		<br></br>
+		<div class="container-fluid" id="form-div">
+			<form id="nuevaObra" th:action="'/obra/modificar/'+${id}"
+				method="post" autocomplete="off">
+				<p class="numerodecuil">
+					<input th:value="${codigo}" name="codigo" type="text"
+						class="validate[required,custom[email]] feedback-input codigoObra"
+						placeholder="Código" id="ndc" required=""></input>
+				</p>
+				<p class="numerodecuil">
+					<input th:value="${nombreDeObra}" name="nombreDeObra" type="text"
+						class="validate[required,custom[email]] feedback-input nombreDeObra"
+						placeholder="Nombre de la obra" id="ndc" required=""></input>
+				</p>
+				<p class="razonsocial">
+					<input th:value="${contacto}" name="contacto"
+						class="validate[required,custom[email]] feedback-input contacto"
+						id="rs" placeholder="Contacto" required=""/>
+				</p>
+				<p class="direccionfiscal">
+					<input th:value="${telefono}" name="telefono" type="text"
+						class="validate[required,custom[email]] feedback-input telefono"
+						id="df" placeholder="Teléfono de contacto" required=""/>
+				</p>
+				<p class="Telefono">
+					<input th:value="${direccion}" name="direccion" type="text"
+						class="validate[required,custom[email]] feedback-input direccion"
+						id="tel" placeholder="Dirección" required=""/>
+				</p>
+				<p class="Telefono">
+					<input th:value="${condPago}" name="condPago" type="text"
+						class="validate[required,custom[email]] feedback-input condpago"
+						id="tel" placeholder="Condición de pago" required=""/>
+				</p>
+
+				<input th:value="${ido}" name="ido" type="hidden" />
+
+				<div class="guardar">
+					<input type="submit" value="GUARDAR" id="button-blue" />
+					<div class="ease"></div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+
+</html>

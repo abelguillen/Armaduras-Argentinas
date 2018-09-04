@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Armaduras Argentinas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500'
+	rel='stylesheet' type='text/css'></link>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
+	rel='stylesheet' type='text/css'></link>
+<link rel="stylesheet" href="/css/style.css"></link>
+<script src="js/modernizr-2.6.2.min.js"></script>
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+<link rel="shortcut icon" type="image/x-icon"
+	href="/images/logo_aa_ico.ico"></link>
+</head>
+<body style="background-color: #7d7c7c" onload="window.print()">
+	<div class="item" th:each="item : ${items}">
+		<!--HEADER-->
+		<table class="header">
+			<!--TR=FILA / TD=COLUMNA -->
+			<tr>
+				<td><span th:text="'CLIENTE: ' + ${pedidos[0].cliente}"></span></td>
+				<td><span th:text="'ITEM N°' + ${item.item}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="'OBRA: ' + ${pedidos[0].obra}"></span></td>
+				<td><span th:text="${pedidos[0].codigo}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="'PLANO: ' + ${item.estructura}"></span></td>
+				<td><span th:text="'POS: ' + ${item.posicion}"></span></td>
+			</tr>
+		</table>
+		<!--BODY-->
+		<table class="body">
+			<tr>
+				<td><span th:text="'CLIENTE: ' + ${pedidos[0].cliente}"></span></td>
+				<td><span th:text="'POS: ' + ${item.posicion}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="'OBRA: ' + ${pedidos[0].obra}"></span></td>
+				<td><span th:text="'Ø ' + ${item.diametro}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="'PLANO: ' + ${item.estructura}"></span></td>
+				<td><span th:text="'# ' + ${item.cantidad}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="${item.observaciones}"></span></td>
+				<td><span th:text="${item.acero}"></span></td>
+			</tr>
+			<tr>
+				<td><span></span></td>
+				<td><span th:text="'LARGO ' + ${item.lParcial}"></span></td>
+			</tr>
+		</table>
+		<table class="body1">
+			<tr>
+				<td></td>
+				<td rowspan="10" id="">&emsp;&emsp;&emsp;&emsp;<img
+					th:src="${item.dibujo}" height="150" width="150"></img></td>
+			</tr>
+			<tr>
+				<td><span th:text="'A&emsp;' + ${item.a}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td><span th:text="'B&emsp;' + ${item.b}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td><span th:text="'C&emsp;' + ${item.c}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td><span th:text="'D&emsp;' + ${item.d}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td><span th:text="'E&emsp;' + ${item.e}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td><span th:text="'F&emsp;' + ${item.f}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td><span th:text="'G&emsp;' + ${item.g}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td><span th:text="'H&emsp;' + ${item.h}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td><span th:text="'H1&emsp;' + ${item.h1}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td><span th:text="'H2&emsp;' + ${item.h2}"></span>&emsp;</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td style="font-size: 1.4em; padding-left: 85px;"><span
+					th:text="${pedidos[0].codigo}"></span></td>
+			</tr>
+		</table>
+		<table class="body2" style="font-size:11px;">
+			<tr>
+				<td><span th:text="'ITEM N° ' + ${item.item}"></span></td>
+				<td rowspan="3" id="cbb">&nbsp;&nbsp;<img style="float: right;"
+					th:src="'http://www.mbcestore.com.mx/generador_codigo_de_barras/codigo_de_barras.html?code=' + ${item.codigo} + '&amp;style=426&amp;type=C39&amp;width=510&amp;height=120&amp;xres=3&amp;font=5'"
+					width="260" height="70"></img></td>
+			</tr>
+			<tr>
+				<td><span th:text="'P: ' + ${item.posicion}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="'KG ' + ${item.peso} + '&nbsp;&nbsp;&nbsp;'"></span></td>
+			</tr>
+		</table>
+		<!--FOOTER-->
+		<table class="footer" style="font-size:11px;">
+			<tr>
+				<td><span th:text="'LARGO ' + ${item.lCortar}"></span></td>
+				<td rowspan="3" id="cbf">&nbsp;&nbsp;<img style="float: right;"
+					th:src="'http://www.mbcestore.com.mx/generador_codigo_de_barras/codigo_de_barras.html?code=' + ${item.codigo} + '&amp;style=426&amp;type=C39&amp;width=510&amp;height=120&amp;xres=3&amp;font=5'"
+					width="260" height="70"></img></td>
+			</tr>
+			<tr>
+				<td><span th:text="'# ' + ${item.cantidad} + '&emsp;Ø ' + ${item.diametro}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="'KG ' + ${item.peso}"></span></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

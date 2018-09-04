@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:include = "layoutPrincipal :: head"></head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+<body class="container-fluid" style="overflow: scroll;">
+<header th:include = "layoutPrincipal :: header"></header>
+<section>
+	<h3 style="color: black;background-color: indianred;padding: 10px;"><a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/cliente">&emsp;Clientes / Obras&emsp;></a></span><span><a style="text-decoration:none;" href="/cliente/nuevocliente">&emsp;Nuevo Cliente</a></span></h3>
+	<br></br>
+	<h4>&nbsp;&nbsp;&nbsp;&nbsp;Complete los datos del cliente. (*) Campos obligatorios.</h4>
+    <div class="container-fluid" id="form-div">
+		<form action="nuevocliente" method="post" class="form" autocomplete="off">
+			<p class="numerodecuil">
+			  <input th:value="${codigo}" name="codigo" type="text" class="validate[required,custom[email]] feedback-input codigo" placeholder="*Codigo" id="ndc" required=""></input>
+			</p>
+			<p class="numerodecuil">
+			  <input th:value="${nro_cuil}" name="nro_cuil" type="text" class="validate[required,custom[email]] feedback-input nro_cuilCliente" placeholder="*CUIL XXXXXXXXXXXX" id="ndc" required=""></input>
+			</p>
+			
+			<p class="nombredefantasia">
+			  <input th:value="${nombreDeFantasia}" name="nombreDeFantasia" type="text" class="validate[required,custom[email]] feedback-input nombreFantasia" id="nombrefantasia" placeholder="*Nombre de Fantasia" required=""/>
+			</p>
+			
+			<p class="razonsocial">
+			  <input th:value="${razonSocial}" name="razonSocial" class="validate[required,custom[email]] feedback-input razonSocial" id="rs" placeholder="*Razon Social" required=""/>
+			</p>
+			<p class="direccionfiscal">
+			  <input th:value="${dirFiscal}" name="dirFiscal" type="text" class="validate[required,custom[email]] feedback-input dirfiscal" id="df" placeholder="*Direccion Fiscal" required=""/>
+			</p>
+			<p class="Telefono">
+			  <input th:value="${telefono}" name="telefono" type="text" class="validate[required,custom[email]] feedback-input telefono" id="tel" placeholder="Telefono" />
+			</p>
+				      
+			<div class="guardar">
+			  <input type="submit" value="GUARDAR" id="button-blue"/>
+			  <div class="ease"></div>
+			</div>
+		</form>
+	</div>
+</section>
+<footer th:include = "layoutPrincipal :: footer"></footer>
+</body>
+
+</html>

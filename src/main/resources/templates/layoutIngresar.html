@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<title>Armaduras Argentinas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link rel="shortcut icon" type="image/x-icon"
+	href="/images/logo_aa_ico.ico"></link>
+<!-- DataBase -->
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"></link>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"></link>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- CSS styles -->
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'></link>
+<link rel="stylesheet" type="text/css" href="/css/prehome.css"></link>
+</head>
+<body>
+	<header th:fragment="header" style="margin-bot:15px;">
+		<div class="container-fluid">
+			<nav class="row" id="barra">
+				<div class="col-md-1 hidden-xs">
+					<h2 id="oldpics_tit">QueDices</h2>
+				</div>
+				<div id="colquejode" class="col-md-1 col-xs-4">
+						<a href="/"><img id="logoenbarra" src="/images/logo.png" alt="logo"></img></a>
+				</div>
+				<div th:if="${variableDeSesion}" class="col-md-8 col-xs-2"></div>
+				<div th:if="${variableDeSesion}" class="col-md-2 col-xs-4" id="nombreUsuario">
+					<p>
+						<img id="Usuario" th:src="${foto}" alt="Usuario" class="img-circle"/>
+						<span th:text="${nombreUsuario}"></span><a href="/salir">Salir</a>
+					</p>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<section>
+		<p style="text-align:center;">ESPACIO DEDICADO A HTML</p>
+	</section>
+	<footer class="row" th:fragment="footer">
+  			<div class="container">
+  				<div class="row">
+  					<div class="col-xs-12 col-sm-12 col-md-12"></div>
+  				</div>
+  			</div>
+	</footer>
+</body>
+</html>

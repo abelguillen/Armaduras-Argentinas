@@ -1,0 +1,58 @@
+.pRemAUD {
+	margin-top: 35px;
+    margin-bottom: -23px;
+}
+.remAUD {
+	margin-left: 310px;
+}
+.marco {
+	height: 685px;
+}
+.obserRem {
+	float: left;
+    margin-left: 170px;
+    width: 538px;
+}
+.totalGlobal {
+	/*El original era 705px*/
+	/*margin-left: 521px;*/
+}
+.col1 {
+	padding-left: 40px;
+}
+.col2 {
+	padding-left: 30px;
+	width: 560px;
+}
+.col3 {
+	padding-left: 0px;
+}
+.col4 {
+	padding-left: 40px;
+}
+body {
+    margin: 0px;
+}
+.medidasRemito {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:white;
+	margin: 0px auto;
+	height: 1126.299212598px; /*29.8cm*/
+	width: 789.921259843px; /*20.9cm*/
+	border: 1px solid black;
+    border-color: transparent;
+}
+#fecha {
+	margin-top: 40.149606px;
+    margin-left: 563px;
+}
+#nombreCliente {
+	margin-top: 88.488189px;
+    margin-left: 113.385826772px;
+}
+#domicilioObra {
+	margin-left: 113.385826772px;
+}
+#cuit {
+	margin-left: 113.385826772px;
+}}

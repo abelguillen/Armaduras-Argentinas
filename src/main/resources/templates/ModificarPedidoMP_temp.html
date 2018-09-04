@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+	<h3 style="color: black;background-color: indianred;padding: 10px;"><a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/inventario">&emsp;Inventario&emsp;></a></span><span><a style="text-decoration:none;" href="/modificarInventario">&emsp;Modificar inventario</a></span></h3>
+	<br></br>
+	<!-- Agregar clase cliente y clase obra  -->
+	<h4>&nbsp;&nbsp;&nbsp;&nbsp;Complete los datos del pedido. (*) Campos obligatorios.</h4>
+		<div class="container-fluid" id="form-div">
+			<form id="editarIngresoMP_temp" action="" method="post" class="form" autocomplete="off">
+				<div>
+					<p style ="display:none"><input th:value="${material}" name="material" type="text"   style="visibility:hidden" class="validate[required,custom[email]] feedback-input 4" placeholder="material"></input> </p>
+					<p style ="display:none"><input th:value="${descripcion}" name="descripcion" type="text" class="validate[required,custom[email]] feedback-input 8"
+					placeholder="descripcion"></input> </p>
+										<p style ="display:none"><input th:value="${kgInicial}" name="kgInicial" type="text"  style="visibility:hidden" class="validate[required,custom[email]] feedback-input 8"
+					placeholder="Kg Inicial" ></input> </p>
+					<p style ="display:none"><input th:value="${umb}" name="umb" type="text" class="validate[required,custom[email]] feedback-input 6" placeholder="umb"></input> </p>
+					<p style ="display:none"><input th:value="${lote}" name="lote" type="text"   style="visibility:hidden" class="validate[required,custom[email]] feedback-input 8"
+					placeholder="lote"></input></p>
+					<p style ="display:none"><input th:value="${destinatario}" name="destinatario" type="text" class="validate[required,custom[email]] feedback-input 8"
+					placeholder="destinatario"></input></p>
+					 <p style ="display:none"><input th:value="${colada}" name="colada" type="text" class="validate[required,custom[email]] feedback-input 8"
+					placeholder="colada"></input></p>
+					 	<p style ="display:none"><input th:value="${pesoPorBalanza}" name="pesoPorBalanza" type="text" class="validate[required,custom[email]] feedback-input 8"
+					placeholder="Peso por balanza"></input></p>
+					<p> <input th:value="${kgEnPlanta}" name="kgEnPlanta" type="text" class="kgEnPlanta validate[required,custom[email]] feedback-input 8"
+					placeholder="Kg en planta"></input></p>
+		</div>
+
+				<div class="guardar">
+					<input type="submit" value="GUARDAR" id="button-blue"></input>
+					<div class="ease"></div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>

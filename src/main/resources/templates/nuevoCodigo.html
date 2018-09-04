@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:include = "layoutPrincipal :: head"></head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+<body class="container-fluid" style="overflow: scroll;">
+<header th:include = "layoutPrincipal :: header"></header>
+<section>
+	<h3 style="color: black;background-color: indianred;padding: 10px;"><a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/materiaprima">&emsp;Materia Prima&emsp;></a></span><span><a style="text-decoration:none;" href="/codigosmp">&emsp;Codigos MP</a></span></h3>
+	<br></br>
+	<h4 id="notifDatos">&nbsp;&nbsp;&nbsp;&nbsp;Complete los siguientes datos. (*) Campos obligatorios.</h4>
+    <div class="container-fluid" id="form-div">
+		<form action="" method="post" class="form" autocomplete="off">
+			<p class="numSAP"><input th:value="${numSAP}" name="numSAP" type="text" class="validate[required,custom[email]] feedback-input numSAP" placeholder="*Numero de SAP" id="numSap" required=""></input></p>
+			<p class="familia">
+				<select th:value="${familia}" name="familia" type="text" class="validate[required,custom[email]] feedback-input familia" placeholder="*Familia" id="fam" required="">
+					<option>6</option>
+					<option>8</option>
+					<option>10</option>
+					<option>12</option>
+					<option>16</option>
+					<option>20</option>
+					<option>25</option>
+					<option>32</option>
+					<option>ANGULOS 2.71</option>
+					<option>ANGULOS 7.4</option>
+					<option>ANGULOS 9.02</option>
+					<option>ANGULOS 10.71</option>
+					<option>CLAVOS 2</option>
+					<option>CLAVOS 2.5</option>
+					<option>ALAMBRON 5</option>
+					<option>ALAMBRES FARDO 1.63</option>	
+				</select>
+			</p>
+			<p class="descripcionCod"><input th:value="${descripcionCod}" name="descripcionCod" type="text" class="validate[required,custom[email]] feedback-input descripcionCod" id="descripcionCod" placeholder="*Descripcion" required=""/></p>
+			<p class="tipoMaterial">
+				<select th:value="${tipoMaterial}" name="tipoMaterial" class="validate[required,custom[email]] feedback-input tipoMaterial" id="tm" placeholder="*Tipo Material" required="">
+					<option>ADN</option>
+					<option>ADNS</option>
+					<option>AL220</option>
+					<option>ATR500</option>
+					<option>ESPECIAL</option>
+				</select>
+			</p>
+			<div class="guardar">
+				<input class="guardarCodigo" type="submit" value="GUARDAR" id="button-blue"/>
+				<div class="ease"></div>
+			</div>
+		</form>
+	</div>
+</section>
+<footer th:include = "layoutPrincipal :: footer"></footer>
+</body>
+</html>

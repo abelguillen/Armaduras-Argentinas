@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+	<h3 style="color: black;background-color: indianred;padding: 10px;">
+			<a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/oficinatecnica">&emsp;Oficina Tecnica&emsp;></a></span><span><a style="text-decoration:none;" href="/productos">&emsp;Etiquetado&emsp;></a></span><span><a
+				style="text-decoration:none;" href="/etiquetado/pedidos">&emsp;Ver Pedidos</a></span>
+		</h3>
+		<br></br>
+	<h4>&nbsp;&nbsp;&nbsp;&nbsp;Complete los datos del item. (*) Campos obligatorios.</h4>
+	<div style="margin-left:5%;"><a class="btn btn-default" th:href="'/productos/items/'+ ${idPedido}">VER ITEMS</a><button type="button" class="btn btn-default" style="color:blue" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">VER FORMATOS</button></div>
+		<div class="container-fluid" id="form-div">
+			<form id="nuevoItem" action="" method="post" autocomplete="off">
+				<input type="hidden" th:value="${idPedido}" name="idPedido" class="validate[required,custom[email]] feedback-input" placeholder="*ID Pedido"></input>
+				<input id="input_est" th:value="${estructura}" name="estructura" autofocus="autofocus" type="text" class="validate[required,custom[email]] feedback-input estructura" placeholder="*Estructura" required = ""></input>
+				<p id="errEst" class="msjError">Cuando se quiera imprimir, en la estructura solo se imprmimen los primeros 20 caracteres.</p>
+				<input th:value="${posicion}" name="posicion" type="text" class="validate[required,custom[email]] feedback-input posicion" placeholder="*Posicion" required = ""></input> 
+				<select id="acero" th:value="${acero}" name="acero" class="validate[required,custom[email]] feedback-input" placeholder="*Acero" required = "">
+					<!--<option th:text="${acero}"></option>-->
+					<option> </option>
+					<option>ADN420S</option>
+					<option>ADN420</option>
+					<option>AL220</option>
+					<option>ATR500</option>
+					<option>ANGULOS</option>
+					<option>CLAVOS</option>
+					<option>ALAMBRES</option>
+					<option>ALAMBRON</option>
+				</select>
+				<!--<select id="material" th:value="${material}" name="material" class="validate[required,custom[email]] feedback-input" placeholder="*Material" required = "">-->
+					<!--<option th:text="${material}"></option>-->
+					<!--<option>ROLLO</option>
+					<option>BARRA</option>
+					<option>ANGULOS</option>
+					<option>ALAMBRES</option>
+					<option>CLAVOS</option>
+					<option>VARIOS</option>
+				</select>-->
+				<select style="display:none;" th:value="${diametro}" name="diametro" type="text" class="validate[required,custom[email]] feedback-input diametro valHierro" placeholder="*Diametro" id="diametro" required = "">
+					<option class="hierro">4.2</option>
+					<option class="hierro">6</option>
+					<option class="hierro">8</option>
+					<option class="hierro">10</option>
+					<option class="hierro">12</option>
+					<option class="hierro">16</option>
+					<option class="hierro">20</option>
+					<option class="hierro">25</option>
+					<option class="hierro">32</option>
+				</select>
+				<select style = "display:none;" th:value="${diametro}" name="diametro" type="text" class="validate[required,custom[email]] feedback-input diametro valAngulos" placeholder="*Diametro" id="diametro" required = "">
+					<option class="angulos">2.71</option>
+					<option class="angulos">7.4</option>
+					<option class="angulos">9.02</option>
+					<option class="angulos">10.71</option>
+				</select>
+				<select style = "display:none;" th:value="${diametro}" name="diametro" type="text" class="validate[required,custom[email]] feedback-input diametro valClavos" placeholder="*Diametro" id="diametro" required = "">
+					<option class="clavosAlambres">2</option>
+					<option class="clavosAlambres">2,5</option>
+				</select>
+				<select style = "display:none;" th:value="${diametro}" name="diametro" type="text" class="validate[required,custom[email]] feedback-input diametro valAlambres" placeholder="*Diametro" id="diametro" required = "">
+					<option class="clavosAlambres">1</option>
+				</select>
+				<select style = "display:none;" th:value="${diametro}" name="diametro" type="text" class="validate[required,custom[email]] feedback-input diametro valAlambron" placeholder="*Diametro" id="diametro" required = "">
+					<option class="clavosAlambres">4.5</option>
+				</select>
+				<input th:value="${cantidad}" name="cantidad" type="text" class="validate[required,custom[email]] feedback-input cantidad" placeholder="*Cantidad" id="cantidad" required = ""></input> 
+				<input th:value="${formato}" name="formato" type="text" class="validate[required,custom[email]] feedback-input formato" placeholder="*Formato" id="FORMATO" required = ""></input>
+				<input type="hidden" th:value="${dibujo}" name="dibujo" class="validate[required,custom[email]] feedback-input" placeholder="*Dibujo" id="dibujo"></input> 
+				<img src="" id="dibujo" />
+				<input type="hidden" th:value="${a}" name="a" class="validate[required,custom[email]] feedback-input 1" placeholder=" A"></input> 
+				<input type="hidden" th:value="${b}" name="b" class="validate[required,custom[email]] feedback-input 2" placeholder=" B"></input> 
+				<input type="hidden" th:value="${c}" name="c" class="validate[required,custom[email]] feedback-input 3" placeholder=" C"></input> 
+				<input type="hidden" th:value="${d}" name="d" class="validate[required,custom[email]] feedback-input 4" placeholder=" D"></input> 
+				<input type="hidden" th:value="${e}" name="e" class="validate[required,custom[email]] feedback-input 5" placeholder=" E"></input> 
+				<input type="hidden" th:value="${f}" name="f" class="validate[required,custom[email]] feedback-input 6" placeholder=" F"></input> 
+				<input type="hidden" th:value="${g}" name="g" class="validate[required,custom[email]] feedback-input 7" placeholder=" G"></input> 
+				<input type="hidden" th:value="${h}" name="h" class="validate[required,custom[email]] feedback-input 8" placeholder=" H"></input> 
+				<input th:value="${h1}" name="h1" type="text" class="validate[required,custom[email]] feedback-input" placeholder=" H1"></input> 
+				<input th:value="${h2}" name="h2" type="text" class="validate[required,custom[email]] feedback-input" placeholder=" H2"></input>
+				<input id="input_obs" th:value="${observaciones}" name="observaciones" type="text" class="validate[required,custom[email]] feedback-input observaciones" placeholder="  Observaciones"></input>
+				<p id="errObs" class="msjError">Cuando se quiera imprimir, en la observacion solo se imprmimen los primeros 20 caracteres.</p>
+				<input name="lTotal" type="text" class="validate[required,custom[email]] feedback-input" id="lTotalAJAX" placeholder="  lTotal" readonly="readonly"></input>
+				<div class="guardar">
+					<input class="botonNuevoItem" type="button" value="GUARDAR" id="button-blue"/>
+					<div class="ease"></div>
+				</div>
+			</form>  
+
+<div class="bd-example">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="exampleModalLabel">Formatos</h4>
+        </div>
+        <div class="modal-body">
+        <form>
+            <div class="form-group">
+            	<div class="container-fluid">
+			<div class="row">
+				<table id="consultas" class="table table-hover" cellspacing="0" width="50%">
+					<thead>
+						<tr>
+							<th style="text-align: center;">POSICION</th>
+							<th>FORMATO</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="formato : ${formatos}">
+							<td th:text="${formato.posicion}" style="text-align:center;"></td>
+							<td><img th:src="${formato.formato}" /></td>						 
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+			
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+
+</html>

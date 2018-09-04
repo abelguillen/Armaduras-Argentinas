@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Armaduras Argentinas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'></link>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'></link>
+<link rel="stylesheet" href="/css/stylePlanilla.css"></link>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo_aa_ico.ico"></link>
+
+<!-- Javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="/js/imprimirPlanilla.js"></script>
+
+</head>
+<body style="background-color: #7d7c7c">
+	<div id="tablin">
+		<table id="cabUno">
+			<tr>
+				<td id="logo" rowspan="7" colspan="2"><img id="imglogo"
+					src="/images/logo_aa copia.jpg" width="86.929133858"
+					height="94.488188976"></img></td>
+				<td id="colCliente" colspan="2">CLIENTE</td>
+				<td id="colObra" colspan="4" th:text="${pedido[0].cliente}"></td>
+				<td id="colDescObs" rowspan="2" colspan="13">DESCRIPCION - OBSERVACIONES</td>
+			</tr>
+			<tr>
+				<td colspan="2">OBRA</td>
+				<td colspan="4" th:text="${pedido[0].obra}"></td>
+			</tr>
+			<tr>
+				<td colspan="2">PLANO</td>
+				<td colspan="4"></td>
+				<td rowspan="5" colspan="13"></td>
+			</tr>
+			<tr>
+				<td colspan="2">OC</td>
+				<td colspan="4">48256</td>
+			</tr>
+			<tr>
+				<td colspan="2">PEDIDO</td>
+				<td colspan="4" th:text="${pedido[0].codigo}"></td>
+			</tr>
+			<tr>
+				<td colspan="2">SERVICIO</td>
+				<td colspan="4" th:text="${pedido[0].tipo}"></td>
+			</tr>
+			<tr>
+				<td colspan="2">DESCRIPCION</td>
+				<td colspan="4" th:text="${pedido[0].descripcion}"></td>
+			</tr>
+		</table>
+		<table id="tabla2">
+			<thead>
+				<tr>
+					<td id="anchoItem">ITEM</td>
+					<td id="anchoPosicion">POSICION</td>
+					<td id="anchoAcero">ACERO</td>
+					<td id="anchoDiametro">Ø</td>
+					<td id="anchoCantidad">CANT</td>
+					<td id="anchoEstructura">ESTRUCT.</td>
+					<td id="anchoDibujo">DIBUJO</td>
+					<td id="anchoA">A</td>
+					<td id="anchoB">B</td>
+					<td id="anchoC">C</td>
+					<td id="anchoD">D</td>
+					<td id="anchoE">E</td>
+					<td id="anchoF">F</td>
+					<td id="anchoG">G</td>
+					<td id="anchoH">H</td>
+					<td id="anchoH1">H1</td>
+					<td id="anchoH2">H2</td>
+					<td id="anchoLParcial">L PARCIAL</td>
+					<td id="anchoLTotal">L TOTAL</td>
+					<td id="anchoPeso">PESO</td>
+					<td id="anchoObservaciones">OBSERVACIONES</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="item : ${items}" id="filaCabIP" value="hola">
+					<td th:text="${item.item}"></td>
+					<td th:text="${item.posicion}"></td>
+					<td th:text="${item.acero}"></td>
+					<td th:text="${item.diametro}"></td>
+					<td th:text="${item.cantidad}"></td>
+					<td th:text="${item.estructura}"></td>
+					<td><img th:src="${item.dibujo}" width="75.590551181"
+						height="75.590551181" /></td>
+					<td th:text="${item.a}"></td>
+					<td th:text="${item.b}"></td>
+					<td th:text="${item.c}"></td>
+					<td th:text="${item.d}"></td>
+					<td th:text="${item.e}"></td>
+					<td th:text="${item.f}"></td>
+					<td th:text="${item.g}"></td>
+					<td th:text="${item.h}"></td>
+					<td th:text="${item.h1}"></td>
+					<td th:text="${item.h2}"></td>
+					<td th:text="${item.lParcial}"></td>
+					<td th:text="${item.lTotal}"></td>
+					<td th:text="${item.peso}"></td>
+					<td th:text="${item.observaciones}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

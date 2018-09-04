@@ -1,0 +1,56 @@
+body {
+    background-color: #7d7c7c;
+}
+.resumenDePeso {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 0px auto;
+    background-color: white;
+    width: 699.212598425px;
+    height: 910.866141732px;
+    border: solid 3px black;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.resumen{
+    margin: 0px auto;
+    width: 631.181102362px;
+    padding-right: 37.795275591px;
+    padding-left: 37.795275591px;
+}
+.resumen1 {
+    margin: 0px auto;
+    margin-top: 15px;    
+    width: 631.181102362px;
+    padding-right: 37.795275591px;
+    padding-left: 37.795275591px;
+    border: 3px solid black;
+}
+.resumen2 {
+    margin: 0px auto;
+    margin-top: 15px;
+    width: 631.181102362px;
+    padding-right: 37.795275591px;
+    padding-left: 37.795275591px;
+    border: 3px solid black;
+}
+.resumen3 {
+    margin: 0px auto;
+    margin-top: 15px;    
+    width: 631.181102362px;
+    padding-right: 37.795275591px;
+    padding-left: 37.795275591px;
+    border: 3px solid black;
+}
+.resumen3 td {
+    border: 2px solid black;
+}
+.resumen4 {
+    margin: 0px auto;
+    margin-top: 15px;    
+    width: 631.181102362px;
+    padding-right: 37.795275591px;
+    padding-left: 37.795275591px;
+    border: 3px solid black;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Armaduras Argentinas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500'
+	rel='stylesheet' type='text/css'></link>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
+	rel='stylesheet' type='text/css'></link>
+<link rel="stylesheet" href="/css/styleCaratula.css"></link>
+<script src="js/modernizr-2.6.2.min.js"></script>
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+<link rel="shortcut icon" type="image/x-icon"
+	href="/images/logo_aa_ico.ico"></link>
+</head>
+<body style="background-color: #7d7c7c">
+	<div class="caratula" th:each="i : ${#numbers.sequence(0, pedido.elementos - 1)}">
+		<!--HEADER-->
+		<table class="carPart1">
+			<!--TR=FILA / TD=COLUMNA -->
+			<tr>
+				<td><span th:text="'CLIENTE: ' + ${pedido.cliente}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="'OBRA: ' + ${pedido.obra}"></span></td>
+			</tr>
+			<tr>
+				<td><span>PEDIDO: <span style="font-size:11px; vertical-align: middle;" 
+					th:text="${pedido.descripcion}"></span></span></td>
+			</tr>
+		</table>
+		<!--BODY-->
+		<table class="carPart2">
+			<tr>
+				<td><span>PEDIDO: <span style="font-size:11px; vertical-align: middle;" 
+					th:text="${pedido.descripcion}"></span></span></td>
+			</tr>
+			<tr><td></td></tr>
+			<tr>
+				<td style="font-size:18px;"><span th:text="${pedido.codigo}"></span></td>
+			</tr>
+			<tr>
+				<td><span style="font-size:15px;" th:text="'PESO: ' + ${pedido.totalKg} / ${pedido.elementos}"></span></td>
+			</tr>
+			<tr>
+				<td><span style="font-size:15px;" th:text="'ELEMENTOS: ' + ${i + 1} + '/' + ${pedido.elementos}"></span></td>
+			</tr>
+			<tr>
+				<td rowspan="3" id="cbb"><img
+					th:src="'http://www.mbcestore.com.mx/generador_codigo_de_barras/codigo_de_barras.html?code=' 
+					+ ${pedido.codigo} + ${i + 1} + '/' + ${pedido.elementos} +
+					'&amp;style=426&amp;type=C39&amp;width=510&amp;height=120&amp;xres=3&amp;font=5'"
+					width="260" height="70"></img></td>
+			</tr>
+		</table>
+		<table class="carPart3">
+			<tr>
+				<td rowspan="3" id="cbb"><img
+					th:src="'http://www.mbcestore.com.mx/generador_codigo_de_barras/codigo_de_barras.html?code=' 
+					+ ${pedido.codigo} + ${i + 1} + '/' + ${pedido.elementos} +
+					'&amp;style=426&amp;type=C39&amp;width=510&amp;height=120&amp;xres=3&amp;font=5'"
+					width="260" height="70"></img></td>
+			</tr>
+			<tr>
+				<td>&emsp;</td>
+			</tr>
+			<tr>
+				<td>&emsp;</td>
+			</tr>
+		</table>
+		<!--FOOTER-->
+		<table class="carPart4" style="font-size:13px;">
+			<tr>
+				<td style="font-size:15px;"><span th:text="${pedido.codigo}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="'PESO: ' + ${pedido.totalKg} / ${pedido.elementos}"></span></td>
+			</tr>
+			<tr>
+				<td><span th:text="'ELEMENTOS: ' + ${i + 1} + '/' + ${pedido.elementos}"></span></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

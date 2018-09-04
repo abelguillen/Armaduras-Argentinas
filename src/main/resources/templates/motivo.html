@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+<body class="container-fluid"  style="overflow: scroll;">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black;background-color: indianred;padding: 10px;">
+			<a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/oficinatecnica">&emsp;Oficina
+			Tecnica&emsp;></a></span><span><a style="text-decoration:none;" href="/productos">&emsp;Etiquetado&emsp;></a></span><span><a style="text-decoration:none;" href="/etiquetado/pedidos">&emsp;Ver Pedidos</a></span>
+		</h3>
+		<br></br>
+		<h4>&nbsp;&nbsp;&nbsp;&nbsp;Complete el motivo por el cambio de fecha. (*) Campos obligatorios.</h4>
+		<div class="container-fluid" id="form-div">
+			<form id="nuevaObra" action="" method="post" autocomplete="off">
+				<p class="numerodecuil">
+					<textarea th:value="${motivo}" name="motivo" cols="25" rows="10" class="validate[required,custom[email]] feedback-input" placeholder="*Motivo" id="ndc"></textarea>
+				</p>
+				<div class="guardar">
+					<input type="submit" value="GUARDAR" id="button-blue" />
+					<div class="ease"></div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+
+</html>

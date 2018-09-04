@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black;background-color: indianred;padding: 10px;">
+			<a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/oficinatecnica">&emsp;Oficina
+			Tecnica&emsp;></a></span><span><a style="text-decoration:none;" href="/productos">&emsp;Etiquetado&emsp;></a></span><span><a style="text-decoration:none;" href="/etiquetado/pedidos">&emsp;Ver Pedidos Despachados</a></span>
+		</h3>
+		<br></br>
+		<div class="container-fluid">
+			<form action="" method="post" autocomplete="off">
+				<div style="text-align:center;">
+
+					<input type="search" class="datepicker" id="datepicker" name="desde" style="padding-bottom:10px; padding-top:7px; text-align:center; width:237px;" placeholder="Desde *DDMMAA" readonly="readonly" />
+					<input type="search" class = "datepicker" id = "datepickerr" name="hasta" style="padding-bottom:10px; padding-top:7px; text-align:center; width:237px;" placeholder="Hasta *DDMMAA" readonly="readonly" />
+					<button type="submit" value="Buscar" style="padding:9px 15px 10px 15px; text-align:center;"><span class="glyphicon glyphicon-search"></span></button>
+				</div>
+			</form>
+			<div class="col-md-12" style="margin-right:0px !important;">
+				<table id="myTable" class="table table-striped table-bordered"
+				cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th scope="col">ENTREGA</th>
+						<th scope="col">CLIENTE</th>
+						<th scope="col">OBRA</th>
+						<th scope="col">CODIGO</th>
+						<th scope="col">DESCRIPCION</th>
+						<th scope="col">ACERO</th>
+						<th scope="col">TOTAL KG</th>
+						<th scope="col">4,2</th>
+						<th scope="col">6</th>
+						<th scope="col">8</th>
+						<th scope="col">10</th>
+						<th scope="col">12</th>
+						<th scope="col">16</th>
+						<th scope="col">20</th>
+						<th scope="col">25</th>
+						<th scope="col">32</th>
+						<th scope="col">OTROS</th>
+						<th scope="col">ESTADO</th>
+						<th scope="col">Ed</th>
+						<th scope="col">El</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="pedido : ${pedidos}" class="clickable-row"
+					th:href="'/productos/nuevoItem/'+ ${pedido.id}">
+					<td class="entrega"><a
+						th:href="'/mostrarMotivo/'+ ${pedido.id}"
+						th:text="${pedido.entrega}" style="color: inherit;"></a></td>
+						<td th:text="${pedido.cliente}"></td>
+						<td th:text="${pedido.obra}"></td>
+						<td th:text="${pedido.codigo}" class="codigo"></td>
+						<td th:text="${pedido.descripcion}"></td>
+						<td th:text="${pedido.tipo}"></td>
+						<td th:text="${pedido.totalKg}"></td>
+						<td th:text="${pedido.cuatrocomados}"></td>
+						<td th:text="${pedido.seis}"></td>
+						<td th:text="${pedido.ocho}"></td>
+						<td th:text="${pedido.diez}"></td>
+						<td th:text="${pedido.doce}"></td>
+						<td th:text="${pedido.dieciseis}"></td>
+						<td th:text="${pedido.veinte}"></td>
+						<td th:text="${pedido.veinticinco}"></td>
+						<td th:text="${pedido.treintaydos}"></td>
+						<td th:text="${pedido.otros}"></td>
+						<td th:text="${pedido.estado}" class="estado"></td>
+						<td><a
+							th:href="'/etiquetado/pedidos/modificar/'+${pedido.id}"
+							style="color: blue"><span class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a
+								th:href="'/etiquetado/pedidos/eliminar/'+${pedido.id}"
+								onclick="return confirm('Are you sure?')" style="color: red"><span
+								class="glyphicon glyphicon-remove"></span></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<footer th:include="layoutPrincipal :: footer"></footer>
+	</body>
+	</html>

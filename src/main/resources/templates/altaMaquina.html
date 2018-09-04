@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Armaduras Argentinas</title>
+		<meta CHARSET="UTF-8"></meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="/css/maquina.css"></link>
+		<link rel="stylesheet" href="/css/styleForm.css"></link>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'></link>
+		<link rel="shortcut icon" type="image/x-icon" href="/images/logo_aa_ico.ico"></link>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+	<body class="container-fluid">
+		<header th:include="layoutPrincipal :: header"></header>
+		<section>
+			<h3 style="color: black; background-color: indianred; padding: 10px;">
+				<a style="text-decoration: none;" href="/">Home&emsp;></a>
+				<span>
+				<a style="text-decoration: none;" href="/maquina">&emsp;Maquina&emsp;></a>
+				</span>
+				<span>
+				<a style="text-decoration: none;" href="/maquina/alta">&emsp;Nueva Maquina</a>
+				</span>
+			</h3>
+			<br></br>
+			<h4 style="color:brown;">&nbsp;&nbsp;&nbsp;&nbsp;Complete los datos de la maquina. (*) Campos obligatorios.</h4>
+			<div class="container-fluid" id="form-div">
+				<form action="" method="post" class="form" autocomplete="off">
+					
+					<!-- Clasificacion -->
+					<p class="clasificacion">
+						<select 
+							name="clasificacion" 
+							th:value="${clasificacion}"
+							class="validate[required,custom[email]] feedback-input"
+							id="clasificacion" 
+							placeholder="*Clasificacion">
+							<option>Estribadora</option>
+							<option>Cortadora</option>
+							<option>Dobladora</option>
+						</select>
+					</p>
+					
+					<!-- Marca -->
+					<p class="marca">
+						<input 
+							th:value="${marca}" 
+							name="marca" 
+							type="text" 
+							class="validate[required,custom[email]] feedback-input" 
+							placeholder="*Marca" 
+							id="marca" 
+							required="">
+						</input>
+					</p>
+					
+					<!-- Modelo -->
+					<p class="modelo">
+						<input 
+							th:value="${modelo}" 
+							name="modelo" 
+							type="text" 
+							class="validate[required,custom[email]] feedback-input" 
+							placeholder="*Modelo" 
+							id="modelo" 
+							required="">
+						</input>
+					</p>
+					
+					<!-- Tipo de MP -->
+					<p class="tipoMP">
+						<select 
+							th:value="${tipoMP}" 
+							name="tipoMP" 
+							class="validate[required,custom[email]] feedback-input" 
+							placeholder="*Tipo de MP" 
+							id="tipoMP">
+							<option>Barras</option>
+							<option>Rollos</option>
+						</select>
+					</p>
+					
+					<!-- Diametro Minimo -->
+					<p class="diametroMin">
+						<select 
+							th:value="${diametroMin}" 
+							name="diametroMin" 
+							class="validate[required,custom[email]] feedback-input" 
+							placeholder="*Diametro Minimo" 
+							id="diametroMin">
+							<option>6</option>
+							<option>8</option>
+							<option>10</option>
+							<option>12</option>
+							<option>16</option>
+							<option>20</option>
+							<option>25</option>
+							<option>32</option>
+						</select>
+					</p>
+					
+					<!-- Diametro Maximo -->
+					<p class="diametroMax">
+						<select 
+							th:value="${diametroMax}" 
+							name="diametroMax" 
+							class="validate[required,custom[email]] feedback-input" 
+							placeholder="*Diametro Maximo" 
+							id="diametroMax">
+							<option>6</option>
+							<option>8</option>
+							<option>10</option>
+							<option>12</option>
+							<option>16</option>
+							<option>20</option>
+							<option>25</option>
+							<option>32</option>
+						</select>
+					</p>
+					
+					<!-- Merma -->
+					<p class="merma">
+						<input 
+							th:value="${merma}" 
+							name="merma" 
+							type="number" 
+							class="validate[required,custom[email]] feedback-input" 
+							placeholder="*Merma" 
+							id="merma" 
+							required="">
+						</input>
+					</p>
+					
+					<!-- Guardar -->
+					<div class="guardar">
+						<input class="guardarCodigo" type="submit" value="GUARDAR" id="button-blue"/>
+						<div class="ease"></div>
+					</div>
+				</form>
+			</div>
+			<div th:if="${validacionDiametro}==true" class="alert alert-danger alert-dismissible fade in"
+				style="position: fixed;margin-left: 20px;">
+			    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			    <strong>Error:</strong> El diametro máximo debe ser mayor al mínimo.
+			</div>
+		</section>
+		<footer th:include="layoutPrincipal :: footer"></footer>
+	</body>
+</html>

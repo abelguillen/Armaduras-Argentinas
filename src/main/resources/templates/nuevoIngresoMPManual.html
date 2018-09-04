@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:include = "layoutPrincipal :: head"></head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+<body class="container-fluid" style="overflow: scroll;">
+<header th:include = "layoutPrincipal :: header"></header>
+<section>
+	<h3 style="color: black;background-color: indianred;padding: 10px;"><a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/materiaprima">&emsp;Materia Prima&emsp;></a></span><span><a style="text-decoration:none;" href="/ingresomp">&emsp;Ingreso MP</a></span></h3>
+	<br></br>
+	<h4>&nbsp;&nbsp;&nbsp;&nbsp;Complete los datos. (*) Campos obligatorios.</h4>
+    <div class="container-fluid" id="form-div">
+		<form action="" method="post" class="form" autocomplete="off">
+			<p class="referencia">
+				<input th:value="${referencia}" name="referencia" id="referencia" type="text" class="validate[required,custom[email]] feedback-input referencia" placeholder="*Referencia" required=""></input>
+			</p>
+			<p class="material">
+				<select th:value="${material}" name="material" type="text" class="validate[required,custom[email]] feedback-input material" placeholder="*Material" id="material" required="">
+					<option th:each="lcmp : ${listaDeCodigosMP}" th:text="${lcmp.codSap}"></option>
+				</select>
+			</p>
+			<p class="cantidadMP">
+				<input th:value="${cantidadMP}" name="cantidadMP" class="validate[required,custom[email]] feedback-input cantidadMP" id="cantidadMP" placeholder="*Cantidad" required=""/>
+			</p>
+			<p class="lote">
+				<input th:value="${lote}" name="lote" type="text" class="validate[required,custom[email]] feedback-input lote" id="lote" placeholder="*Lote" required=""/>
+			</p>
+			<p class="destinatario">
+				<select th:value="${destinatario}" name="destinatario" type="text" class="validate[required,custom[email]] feedback-input destinatario" id="destinatario" placeholder="Destinatario">
+					<option>PROPIO</option>
+					<option>TERCEROS</option>
+				</select>
+			</p>
+			
+			<div class="guardar">
+				<input type="submit" value="GUARDAR" id="button-blue"/>
+				<div class="ease"></div>
+			</div>
+		</form>
+	</div>
+</section>
+<footer th:include = "layoutPrincipal :: footer"></footer>
+</body>
+
+</html>

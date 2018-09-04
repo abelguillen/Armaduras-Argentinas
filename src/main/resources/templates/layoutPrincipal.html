@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<title>Armaduras Argentinas</title>
+<meta CHARSET="UTF-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<link rel="stylesheet" 
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous"></link>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+	crossorigin="anonymous"></link>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"></link>
+<!-- DataBase -->
+<script
+	src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"></link>
+<link rel="stylesheet" href="/css/styleInputFile.css"></link>
+<link rel="stylesheet" href="/css/home.css"></link>
+<link rel="stylesheet" href="/css/nuevaObra.css"></link>
+<link rel="stylesheet" href="/css/nuevoCliente.css"></link>
+<link rel="stylesheet" href="/css/formulario.css"></link>
+<link rel="stylesheet" href="/css/newItem.css"></link>
+<link rel="stylesheet" href="/css/styleRemitoVal.css"></link>
+<link href='https://fonts.googleapis.com/css?family=Lato'
+	rel='stylesheet' type='text/css'></link>
+<link rel="shortcut icon" type="image/x-icon"
+	href="/images/logo_aa_ico.ico"></link>
+<!-- Javascript -->
+<script src="/js/validacionesNuevoUsuarioAndroid.js"></script>
+<script src="/js/validacionFormato.js"></script>
+<script src="/js/JavaScript.js"></script>
+<script src="/js/validacionRemito.js"></script>
+<script src="/js/validacionCodigo.js"></script>
+<script src="/js/nuevoItem.js"></script>
+<script src="/js/validacionIngresoMP.js"></script>
+<script src="/js/ingresoRemitos.js"></script>
+<script src="/js/detalleStock.js"></script>
+<script src="/js/modificarMaquina.js"></script>
+<script src="/js/nuevoPedido.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></link>
+<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(function() {
+		$("#datepicker").datepicker({
+			dateFormat : "ddmmyy"
+		});
+	});
+	$(function() {
+		$("#datepickerr").datepicker({
+			dateFormat : "ddmmyy",
+		});
+	});
+</script>
+</head>
+<body>
+	<header th:fragment="header">
+		<div class="row" id="menu">
+			<!--<div class="container-wrap">
+				<h1 Style="padding-top: 15px;"><a href="/"> <img src="/images/logo_aa copia.jpg" height="100" width="156" style="float: left;"/></a>
+				<a href="/" Style="text-decoration: none; color: black; padding-right: 156px;">Armaduras Argentinas </a></h1>
+			</div>-->
+			<div class="row" id="menu">
+				<center><img src="/images/header.jpg" width="50%" height="50%"></img></center>
+			</div>
+		</div>
+		<div th:if="${esAdmin}==true" id="drop_menu" class="dropdown" style="float:right; bottom:50px; right:15px;">
+			<button id="boton_drop_menu" class="btn btn-default dropdown-toggle"
+				type="button" data-toggle="dropdown">
+				<span class="glyphicon glyphicon-user"></span><span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-menu-right">
+				<li><a href="/modificarDatos"><span
+						class="glyphicon glyphicon-cog"></span> Datos</a></li>
+				<li><a href="/agregarEmpleado"><span
+						class="glyphicon glyphicon-plus"></span> Agregar empleado</a></li>
+				<li><a href="/agregarPermisos"><span
+						class="glyphicon glyphicon-plus"></span> Agregar permisos</a></li>
+				<li class="divider"></li>
+				<li><a href="/salir"><span
+						class="glyphicon glyphicon-off"></span> Cerrar Sesion</a></li>
+			</ul>
+		</div>
+	</header>
+	<section class="nav"></section>
+	<footer th:fragment="footer"></footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body>
+	<header th:include="layoutPrincipal :: header"></header>
+	<section class="registrar nav">
+		<h3 style="color: black; background-color: indianred; padding: 10px;">
+			<a style="text-decoration: none;" href="/">Home&emsp;></a><span><a
+				style="text-decoration: none;" href="/administracion">&emsp;Administracion&emsp;></a></span>
+			<span><a style="text-decoration: none;" href="/usuariosAndroid">&emsp;Usuarios
+					Android&emsp;></a></span> <span><a style="text-decoration: none;"
+				href="/administracion/nuevoUsuarioAndroid">&emsp;Nuevo Usuario
+					Android</a></span>
+		</h3>
+		<h3 style="color: brown;">Complete los datos del nuevo usuario Android. (*) Campos obligatorios.</h3>
+		<div class="container-fluid" id="form-div">
+			<br></br>
+			<div class="row" style="background-color: rgba(72, 72, 72, 0.4);">
+				<form id="nuevoUsuario" action="" method="post" autocomplete="off">
+					<input type="text" th:value="${nombre}" name="nombre" class="validate[required,custom[email]] feedback-input razonSocial" id="espacio" placeholder="*Nombre" required=""></input> 
+					<input type="text" th:value="${apellido}"
+						name="apellido" class="validate[required,custom[email]] feedback-input nombreFantasia" id="espacio"
+						placeholder="*Apellido" required=""></input>
+					<input type="text" th:value="${fechaDeNacimiento}"
+						name="fechaDeNacimiento" class="validate[required,custom[email]] feedback-input fechaAndroid"
+						id="espacio" placeholder="*Fecha de Nacimiento (dd/mm/aaaa)" required=""></input>
+					<input type="text" th:value="${codigo}" name="codigo" class="validate[required,custom[email]] feedback-input codigo codigoAndroid"
+						id="espacio" placeholder="*Codigo" required=""></input>
+					<input
+						th:value="${contrasenia}" type="password" name="contrasenia"
+						class="validate[required,custom[email]] feedback-input contrasenia dirfiscal" id="espacio"
+						placeholder="  *Contrasenia" required=""></input>
+					<input type="password" th:value="${contrasenia}"
+						name="Rcontrasenia" class="validate[required,custom[email]] feedback-input recontrasenia dirfiscal"
+						id="espacio" placeholder="  *Repita la contrasenia" required=""></input>
+					<div class="guardar">
+				        <input type="submit" value="GUARDAR" id="button-blue"/>
+				        <div class="ease"></div>
+				      </div>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

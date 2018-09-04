@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Armaduras Argentinas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'></link>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'></link>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous"></link>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+	crossorigin="anonymous"></link>
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo_aa_ico.ico"></link>
+<!-- CSS -->
+<link rel="stylesheet" href="/css/styleRemito.css"></link>
+<!-- JQuery -->
+<script type="text/javascript" src="/js/imprimirRemFE.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></link>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body style="background-color:#7d7c7c;" onload="window.print()">
+	<div class="medidasRemito">
+		<p id="fecha"><span th:text="${fechaRemito}"></span></p>
+		<p id="nombreCliente"><span th:text="${cliente}"></span></p>
+		<p id="domicilioObra"><span th:text="${domicilio}"></span></p>
+		<p id="cuit"><span th:text="${cuil}"></span></p>
+		<div class="marco">
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="col2"><span th:text="'PEDIDO: ' + ${CodigoDePedido1}"></span>&nbsp;-&nbsp;<span th:text="${descripcionCodigoUno}"></span></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<br></br>
+				<br></br>
+				<br></br>
+				<p class="pRemAUD"><span class="remAUD" th:text="${remitimosAUd}"></span></p>
+				<br></br>
+				<br></br>
+				<br></br>
+				<br></br>
+				<tr th:each="p1 : ${listaPedFormRem1}">
+					<td class="col1"><span th:text="${p1.codigo}"></span></td>
+					<td class="col2"><span th:text="${p1.descripcion}"></span></td>
+					<td class="col3"><span th:text="${p1.um}"></span></td>
+					<td class="col4"><span th:text="${p1.total}"></span></td>
+				</tr>
+				<tr>
+					<td><br></br></td>
+				</tr>
+				<tr th:if="${pedido2}==true">
+					<td>&nbsp;</td>
+					<td class="col2"><span th:text="'PEDIDO: ' + ${CodigoDePedido2}"></span>&nbsp;-&nbsp;<span th:text="${descripcionCodigoDos}"></span></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr th:each="p1 : ${listaPedFormRem2}">
+					<td class="col1"><span th:text="${p1.codigo}"></span></td>
+					<td class="col2"><span th:text="${p1.descripcion}"></span></td>
+					<td class="col3"><span th:text="${p1.um}"></span></td>
+					<td class="col4"><span th:text="${p1.total}"></span></td>
+				</tr>
+				<tr>
+					<td><br></br></td>
+				</tr>
+				<tr th:if="${pedido3}==true">
+					<td>&nbsp;</td>
+					<td class="col2"><span th:text="'PEDIDO: ' + ${CodigoDePedido3}"></span>&nbsp;-&nbsp;<span th:text="${descripcionCodigoTres}"></span></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr th:each="p1 : ${listaPedFormRem3}">
+					<td class="col1"><span th:text="${p1.codigo}"></span></td>
+					<td class="col2"><span th:text="${p1.descripcion}"></span></td>
+					<td class="col3"><span th:text="${p1.um}"></span></td>
+					<td class="col4"><span th:text="${p1.total}"></span></td>
+				</tr>
+			</table>
+		</div>
+		<p><span class="obserRem" th:text="${obserRem}"></span><span class="totalGlobal" th:text="${totalGlobal}"></span></p>
+	</div>
+</body>
+</html>

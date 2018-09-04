@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body>
+	<header th:include="layoutPrincipal :: header"></header>
+	<section class="registrar nav">
+	<h3 style="color: black; background-color: indianred; padding: 10px;">
+			<a style="text-decoration: none;" href="/">Home&emsp;></a><span><a
+				style="text-decoration: none;" href="/administracion">&emsp;Administracion&emsp;></a></span>
+			<span><a style="text-decoration: none;" href="/usuariosWeb">&emsp;Usuarios
+					Web&emsp;></a></span> <span><a style="text-decoration: none;"
+				href="/administracion/nuevoUsuarioWeb">&emsp;Nuevo Usuario
+					Web</a></span>
+		</h3>
+		<h3 style="color: brown;">&nbsp;&nbsp;&nbsp;Registrar nuevo usuario web</h3>	
+		<div class="container-fluid" id="form-div">
+				<div class="row">
+					<h5>Campos obligatorios(*)</h5>
+					<form id="nuevoUsuario" action="" method="post" autocomplete="off">
+						<input type="text" name="nombre" class="validate[required,custom[email]] feedback-input nombre" id="espacio" placeholder="*Nombre"></input>
+						<input type="text" name="apellido" class="validate[required,custom[email]] feedback-input apellido" id="espacio" placeholder="*Apellido"></input>
+						<select type="text" name="tipo" class="validate[required,custom[email]] feedback-input tipo" id="espacio" placeholder="*Tipo">
+							<option th:each="tipo : ${tipos}" th:text="${tipo}"></option>
+						</select>
+						<input type="email" name="correo" class="validate[required,custom[email]] feedback-input correoelectronico" id="espacio" placeholder="*Correo electronico"></input>
+						<input type="password" name="contrasenia" class="validate[required,custom[email]] feedback-input contrasenia" id="espacio" placeholder="  *Contrasenia"></input>
+						<input type="password" name="Rcontrasenia" class="validate[required,custom[email]] feedback-input recontrasenia" id="espacio" placeholder="  *Repita la contrasenia"></input>
+						<div class="guardar">
+							<input type="submit" value="GUARDAR" id="button-blue" />
+							<div class="ease"></div>
+						</div>						
+					</form>
+				</div>	
+			</div>
+	</section>
+</body>
+</html>

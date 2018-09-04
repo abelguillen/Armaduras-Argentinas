@@ -1,0 +1,32 @@
+.divFileTXT {
+	width: 380px;
+    height: 100px;
+    margin-bottom: 10px;
+    border: solid 4px;
+    border-color: white;
+    background-color: bisque;
+}
+#txtAcerbrag {
+	padding-top: 39px;
+    font-size: large;
+    display: none;
+}
+.input-label {
+	margin-left: 36px;
+    margin-top: 21px;
+    background-color: cadetblue;
+    width: 300px;
+    height: 51px;
+    text-align: -webkit-center;
+    padding-top: 11px;
+    font-size: 22px;
+    border-radius: 11px;
+    color: currentColor;
+    transition: 0.3s;
+    border: solid 2px;
+    border-color: black;
+}
+.input-label:hover {
+	backround: #26a69a;
+	cursor: pointer;
+}

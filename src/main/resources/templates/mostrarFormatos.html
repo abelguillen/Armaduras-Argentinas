@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+	<h3 style="color: black;background-color: indianred;padding: 10px;">
+			<a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/oficinatecnica">&emsp;Oficina
+					Tecnica&emsp;></a></span><span><a style="text-decoration:none;" href="/productos">&emsp;Etiquetado&emsp;></a></span><span><a
+				style="text-decoration:none;" href="/productos/formatos">&emsp;Ver Formatos</a></span>
+		</h3>
+		<br></br>
+		<div class="container-fluid">
+			<div class="row">
+				<table id="myTable" class="display" cellspacing="0" width="20%">
+					<thead>
+						<tr>
+							<th>POSICION&ensp;&ensp;</th>
+							<th>FORMATO</th>
+							<th>EDITAR</th>
+							<th>ELIMINAR</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="formato : ${formatos}">
+							<td th:text="${formato.posicion}" style="text-align:center;"></td>
+							<td><img th:src="${formato.formato}" /></td>
+							<td><a th:href="'/productos/formatos/modificar/'+${formato.id}" style="color:blue"><span class="glyphicon glyphicon-pencil"></span></a></td>
+							<td><a th:href="'/productos/formatos/eliminar/'+${formato.id}" onclick="return confirm('Are you sure?')" style="color:red"><span class="glyphicon glyphicon-remove"></span></a></td>							 
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>

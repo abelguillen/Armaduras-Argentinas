@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+	<head th:include="layoutPrincipal :: head">
+	</head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+	<body style="overflow: scroll;">
+		<header th:include="layoutPrincipal :: header"></header>
+		<section>
+		<h3 style="color: black; background-color: indianred; padding: 10px;">
+			<a style="text-decoration: none;" href="/">Home&emsp;></a>
+			<span>
+			<a style="text-decoration: none;" href="/maquina">&emsp;Maquina&emsp;></a>
+			</span>
+			<span>
+			<a style="text-decoration: none;" href="/maquina/lista">&emsp;Lista de Maquinas</a>
+			</span>
+		</h3>
+		<br></br>
+		<br></br>
+			<div style="margin-left:10px;margin-right:10px;">
+				<table id="myTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th>CLASIFICACION</th>
+							<th>MARCA</th>
+							<th>MODELO</th>
+							<th>TIPO MP</th>
+							<th>&empty;  MIN</th>
+							<th>&empty;  MAX</th>
+							<th>MERMA</th>
+							<th>MODIFICAR</th>
+							<th>ELIMINAR</th>
+						</tr>
+						</thead>
+					<tbody>
+						<tr th:each="m : ${listaDeMaquinas}">
+							<td><span th:text="${m.clasificacion}" class="id"> </span></td>
+							<td><span th:text="${m.marca}"> </span></td>
+							<td><span th:text="${m.modelo}"> </span></td>
+							<td><span th:text="${m.tipoMP}"> </span></td>
+							<td><span th:text="${m.diametroMin}"> </span></td>
+							<td><span th:text="${m.diametroMax}"> </span></td>
+							<td><span th:text="${m.merma}"> </span></td>
+							<td>
+								<button type="button" 
+										id="modificarMaquina"
+										class="btn btn-default" 
+										style="color:blue;" 
+										data-toggle="modal" 
+										data-target="#exampleModal" 
+										data-whatever="@mdo">
+									<span class="glyphicon glyphicon-pencil"></span>
+									<p id="idMaquina" style="display:none;" th:text="${m.id}"></p>
+								</button>
+							</td>
+							<td><a th:href="'/maquina/eliminar/'+${m.id}"
+								onClick="return confirm('Esta seguro que desea eliminar la maquina?')">
+								<button type="button"
+								   		style="color:red;width:40px;height:35px">
+									<span class="glyphicon glyphicon-remove"></span>
+								</button></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    			<div class="modal-dialog" role="document">
+      				<div class="modal-content">
+        				<div class="modal-header">
+          					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            					<span aria-hidden="true">&times;</span>
+          					</button>
+          					<h4 class="modal-title" id="exampleModalLabel">Modificar Maquina</h4>
+        				</div>
+        				<div class="modal-body">
+        				<!-- El action del form lo modifico con JQuery -->
+        					<form id="formMaquina" action="#" method="post" autocomplete="off">
+            					<div class="form-group">
+            						<div class="container-fluid">
+										<div class="row">
+											<!-- ID -->
+											<input
+												style="display:none;"
+												th:value="${id}"
+												name="id" 
+												type="text"  
+												id="id">
+											</input>
+											<!-- Clasificacion -->
+											<p class="clasificacion"> Clasificacion:
+												<select 
+													name="clasificacion" 
+													th:value="${clasificacion}"
+													class="validate[required,custom[email]] feedback-input"
+													id="clasificacion" 
+													placeholder="*Clasificacion">
+													<option value="Estribadora">Estribadora</option>
+													<option value="Cortadora">Cortadora</option>
+													<option value="Dobladora">Dobladora</option>
+												</select>
+											</p>
+											
+											<!-- Marca -->
+											<p class="marca"> Marca:
+												<input 
+													th:value="${marca}"
+													name="marca" 
+													type="text" 
+													class="validate[required,custom[email]] feedback-input" 
+													placeholder="*Marca" 
+													id="marca" 
+													required="">
+												</input>
+											</p>
+											
+											<!-- Modelo -->
+											<p class="modelo"> Modelo:
+												<input 
+													th:value="${modelo}" 
+													name="modelo" 
+													type="text" 
+													class="validate[required,custom[email]] feedback-input" 
+													placeholder="*Modelo" 
+													id="modelo" 
+													required="">
+												</input>
+											</p>
+											
+											<!-- Tipo de MP --> Tipo de MP:
+											<p class="tipoMP">
+												<select 
+													th:value="${tipoMP}" 
+													name="tipoMP" 
+													class="validate[required,custom[email]] feedback-input" 
+													placeholder="*Tipo de MP" 
+													id="tipoMP">
+													<option value="Barras">Barras</option>
+													<option value="Rollos">Rollos</option>
+												</select>
+											</p>
+											
+											<!-- Diametro Minimo -->
+											<p class="diametroMin"> Diametro minimo:
+												<select 
+													th:value="${diametroMin}" 
+													name="diametroMin" 
+													class="validate[required,custom[email]] feedback-input" 
+													placeholder="*Diametro Minimo" 
+													id="diametroMin">
+													<option value="6">6</option>
+													<option value="8">8</option>
+													<option value="10">10</option>
+													<option value="12">12</option>
+													<option value="16">16</option>
+													<option value="20">20</option>
+													<option value="25">25</option>
+													<option value="32">32</option>
+												</select>
+											</p>
+											
+											<!-- Diametro Maximo -->
+											<p class="diametroMax"> Diametro maximo:
+												<select 
+													th:value="${diametroMax}" 
+													name="diametroMax" 
+													class="validate[required,custom[email]] feedback-input" 
+													placeholder="*Diametro Maximo" 
+													id="diametroMax">
+													<option value="6">6</option>
+													<option value="8">8</option>
+													<option value="10">10</option>
+													<option value="12">12</option>
+													<option value="16">16</option>
+													<option value="20">20</option>
+													<option value="25">25</option>
+													<option value="32">32</option>
+												</select>
+											</p>
+											
+											<!-- Merma -->
+											<p class="merma"> Merma:
+												<input 
+													th:value="${merma}" 
+													name="merma" 
+													type="number" 
+													class="validate[required,custom[email]] feedback-input" 
+													placeholder="*Merma" 
+													id="merma" 
+													required="">
+												</input>
+											</p>
+											
+											<div class="guardarMaquina">
+											<p></p>
+												<input type="submit" value="GUARDAR" id="button-blue"/>
+												<div class="ease"></div>
+											</div>
+										</div>
+									</div>
+            					</div>
+          					</form>
+       					</div>
+        				<div class="modal-footer">
+          					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        				</div>
+      				</div>
+    			</div>
+    		</div>
+		</section>
+		<footer th:include="layoutPrincipal :: footer"></footer>
+	</body>
+</html>

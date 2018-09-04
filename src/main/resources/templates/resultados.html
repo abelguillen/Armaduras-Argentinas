@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body>
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<div class="container-fluid" th:if="${nroRefRep}==true">
+			<h3 th:text="${textoError}"></h3>
+		</div>
+		<div class="container-fluid" th:if="${codInvalido}==true">
+			<h3>Ha ocurrido un error. Codigo invalido.</h3>
+		</div>
+		<div class="container-fluid" th:if="${nomFanRep}==true">
+			<h3>Ha ocurrido un error. El Nombre de Fantasia ya existe.</h3>
+		</div>
+		<div class="container-fluid" th:if="${nomRep}==true">
+			<h3>Ha ocurrido un error. El nombre de la obra ya existe.</h3>
+		</div>
+		<div class="container-fluid" th:if="${yaIngresado}==true">
+			<h3>El cliente ya esta trabajando en la obra seleccionada.</h3>$
+		</div>
+		<div class="container-fluid" th:if="${camposObligatorios}==false">
+			<h3>Ha ocurrido un error. No se completaron los campos
+				obligatorios.</h3>
+		</div>
+				<div class="container-fluid" th:if="${cant_doblados}==false">
+			<h3>Ha ocurrido un error. La cantidad de doblados solo puede contener numeros.</h3>
+		</div>
+		<div class="container-fluid" th:if="${cuilOK}==false">
+			<h3>Ha ocurrido un error. El CUIL es invalido.</h3>
+		</div>
+		<div class="container-fluid" th:if="${fechaValida}==false">
+			<h3>Ha ocurrido un error. La fecha es invalida.</h3>
+		</div>
+				<div class="container-fluid" th:if="${kgEnPlanta}==false">
+			<h3>El campo de kilogramo en planta solo puede contener numeros.</h3>
+		</div>
+		<div class="container-fluid" th:if="${campoVacio}==true">
+			<h3>Ha ocurrido un error. No se completaron todos los campos.</h3>
+		</div>
+		<div class="container-fluid" th:if="${codigoRepetido}==true">
+			<h3>Ha ocurrido un error. El campo "Codigo" ya esta registrado.</h3>
+		</div>
+		<div class="container-fluid" th:if="${hayClientes}==false">
+			<h3>Ha ocurrido un error. No hay clientes registrados.</h3>
+		</div>
+		<div class="container-fluid" th:if="${hayRemitos}==false">
+			<h3>Ha ocurrido un error. No hay remitos registrados.</h3>
+		</div>
+		<div class="container-fluid" th:if="${hayObras}==false">
+			<h3>Ha ocurrido un error. No hay obras registradas.</h3>
+		</div>
+		<div class="container-fluid" th:if="${tresDigitos}==false">
+			<h3>El campo "C贸digo" debe estar compuesto de s贸lo 3 d铆gitos.</h3>
+		</div>
+		<div class="container-fluid" th:if="${dosDigitos}==false">
+			<h3>El campo "C贸digo" debe estar compuesto de s贸lo 2 d铆gitos.</h3>
+		</div>
+		<div class="container-fluid" th:if="${hayPedidos}==false">
+			<h3>Ha ocurrido un error. No hay pedidos registrados.</h3>
+		</div>
+		<div class="container-fluid" th:if="${hayUsuariosAndroid}==false">
+			<h3>Ha ocurrido un error. No hay usuarios Android registrados.</h3>
+		</div>
+		<div class="container-fluid" th:if="${hayUsuariosWeb}==false">
+			<h3>Ha ocurrido un error. No hay usuarios Web registrados.</h3>
+		</div>
+		<div class="container-fluid" th:if="${noTienePedidos}==false">
+			<h3>Ha ocurrido un error. El cliente aun tiene pedidos.</h3>
+		</div>
+		<div class="container-fluid" th:if="${noTieneObras}==false">
+			<h3>Ha ocurrido un error. El cliente aun tiene obras.</h3>
+		</div>
+		<div class="container-fluid" th:if="${noTienePedidosObra}==false">
+			<h3>Ha ocurrido un error. La obra aun tiene pedidos.</h3>
+		</div>
+		<div class="container-fluid" th:if="${hayMotivo}==false">
+			<h3>Ha ocurrido un error. No completaste el motivo.</h3>
+		</div>
+		<div class="container-fluid" style="text-align: center;"
+			th:if="${ingresar}">
+			<div class="col-xs-3 col-sm-3 col-md-3"></div>
+			<div class="col-xs-6 col-sm-6 col-md-6">
+				<h3 style="color: white">El Usuario se creo exitosamente!</h3>
+				<!-- 			<h3>Te hemos enviado un mail para la habilitacion de la cuenta.</h3> -->
+				<a href="/" id="button-blue" style="margin-left: -1%;">Home</a>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3"></div>
+		</div>
+		<div class="container-fluid" th:if="${contrasenia}==false">
+			<h3>Ha ocurrido un error. Las contrase馻s no coinciden</h3>
+		</div>
+		<div class="container-fluid" th:if="${correo}==false">
+			<h3>Ha ocurrido un error. Ese correo ya fue utilizado</h3>
+		</div>
+		<div class="container-fluid" th:if="${lados}==false">
+			<h3>Ha ocurrido un error. La cantidad de lados es incorrecta</h3>
+		</div>
+		<div class="container-fluid" th:if="${diametroCorrespondiente}==false">
+			<h3>Ha ocurrido un error. Se ingreso un diametro no
+				correspondiente.</h3>
+		</div>
+		<div class="container-fluid" th:if="${tipoBien}==false">
+			<h3>Ha ocurrido un error. Se debe ingresar solo letras.</h3>
+		</div>
+		<div class="container-fluid" th:if="${posicionEstructura}==false">
+			<h3>Ha ocurrido un error. Repetiste una posicion en la misma
+				estructura.</h3>
+		</div>
+		<div class="container-fluid" th:if="${permiRepe}==true">
+			<h3>Ha ocurrido un error. El usuario ya posee el permiso que le
+				quiere otorgar.</h3>
+		</div>
+		<div class="container-fluid" th:if="${permiRepe}==false">
+			<h3>El permiso se ha otorgado correctamente.</h3>
+		</div>
+		<div class="container-fluid"
+			th:if="${numeroDeRemitoSinRepetir}==false">
+			<h3>Ingresaste un numero de remito que esta repetido.</h3>
+		</div>
+		<div class="container-fluid" th:if="${hayCodigosMP}==false">
+			<h3>No hay codigos cargados. Por favor, ingrese codigos.</h3>
+		</div>
+		<div class="container-fluid" th:if="${hayCodigosMP}==false">
+			<h3>No hay Ingresos de Materia Prima cargados. Por favor,
+				ingreselos.</h3>
+		</div>
+		<div class="container-fluid" th:if="${cargoArchivo}==false">
+			<h3 style="color: white;">No seleccionaste ningun archivo. Por
+				favor, selecciona un archivo.</h3>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>

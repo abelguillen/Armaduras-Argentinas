@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h4>&nbsp;&nbsp;&nbsp;&nbsp;Complete los datos del formato. (*)
+			Campos obligatorios.</h4>
+		<div class="container-fluid" id="form-div">
+			<form id="nuevoFormato" action="" method="post" autocomplete="off">
+				<div class="row">
+					<input th:value="${tipo}" name="tipo" type="text"
+						class="form-control" placeholder="*Tipo de Usuario"></input>
+					<div class="guardar">
+						<input type="submit" value="GUARDAR" id="button-blue" />
+						<div class="ease"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>

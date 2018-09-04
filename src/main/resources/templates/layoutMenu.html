@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<title>Armaduras Argentinas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link rel="shortcut icon" type="image/x-icon"
+	href="/images/logo_aa_ico.ico"></link>
+<!-- DataBase -->
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"></link>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"></link>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- CSS styles -->
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'></link>
+<link rel="stylesheet" type="text/css" href="/css/prehome.css"></link>
+</head>
+<body>
+	<header></header>
+	<section>
+		<div th:fragment="menu" class="col-md-8">
+			<div id="menuL">
+				<ul>
+					<a id="idA" href="/cliente" style="text-decoration: none;"><li><img
+							src="/images/profle.png" alt="" width="70px"></img>CLIENTE /
+							OBRA</li></a>
+					<a id="idA" href="/oficinatecnica" style="text-decoration: none;"><li><img
+							src="/images/cart.png" alt="" width="70px"></img>OFICINA TECNICA</li></a>
+					<a id="idA" href="/remitos" style="text-decoration: none;"><li><img
+							src="/images/analytics.png" alt="" width="70px"></img>REMITOS</li></a>
+					<a id="idA" href="/materiaprima" style="text-decoration: none;"><li><img
+							src="/images/cuaderno.png" alt="" width="70px"></img>MATERIA
+							PRIMA</li></a>
+					<a id="idA" href="/administracion" style="text-decoration: none;"><li><img
+							src="/images/responsive.png" alt="" width="70px"></img>ADMINISTRACION</li></a>
+					<a id="idA" href="/inventario" style="text-decoration: none;"><li><img
+							src="/images/inventario.png" alt="" width="70px"></img>INVENTARIO</li></a>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<footer class="row" th:fragment="footer">
+	</footer>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"></meta>
+	<title>Armaduras Argentinas</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'></link>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'></link>
+	<link rel="stylesheet" href="/css/styleInspCarga.css"></link>
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+	<link rel="shortcut icon" type="image/x-icon" href="/images/logo_aa_ico.ico"></link>
+</head>
+<body style="background-color: #7d7c7c">
+	<div id="tablin">
+		<table>
+			<tr>
+				<td id="logo" rowspan="6" colspan="3" style="padding:0px 0px;"><img src="/images/logo_aa copia.jpg" width="207.874015748" height="181.417322835"></img></td>
+				<td colspan="6">INSPECCION DE CARGA</td>
+			</tr>
+			<tr>
+				<td colspan="2">CLIENTE</td>
+				<td colspan="4" th:text="${pedido[0].cliente}"></td>
+			</tr>
+			<tr>
+				<td colspan="2">PEDIDO</td>
+				<td colspan="4" th:text="${pedido[0].codigo}"></td>
+			</tr>
+			<tr>
+				<td colspan="2">SERVICIO</td>
+				<td colspan="4" th:text="${pedido[0].tipo}"></td>
+			</tr>
+			<tr>
+				<td colspan="2">FECHA</td>
+				<td colspan="4"></td>
+			</tr>
+			<tr>
+				<td colspan="2">DESCRIPCION</td>
+				<td colspan="4" th:text="${pedido[0].descripcion}"></td>
+			</tr>
+			<tr id="titulos">
+				<td>N°</td>
+				<td>&nbsp;Ø6&nbsp;</td>
+				<td>Ø8</td>
+				<td>Ø10</td>
+				<td>Ø12</td>
+				<td>Ø16</td>
+				<td>Ø20</td>
+				<td>Ø25</td>
+				<td>Ø32</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td></td>
+				<td>&emsp;&emsp;&emsp;</td>
+				<td>&emsp;&emsp;&emsp;&emsp;</td>
+				<td></td>
+				<td>&emsp;</td>
+				<td>&emsp;</td>
+				<td>&emsp;</td>
+				<td>&emsp;</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>16</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>17</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>18</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>19</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr id="te">
+				<td>T</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr id="especial">
+				<td colspan="2" id="esp">KG TEORICO</td>
+				<td colspan="2"></td>
+				<td id="esp">KG REAL</td>
+				<td colspan="2"></td>
+				<td id="esp">%</td>
+				<td></td>
+			</tr>
+			<tr id="especial">
+				<td colspan="2" id="esp">ENCARGADO</td>
+				<td colspan="2"></td>
+				<td id="esp">FIRMA</td>
+				<td colspan="4"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

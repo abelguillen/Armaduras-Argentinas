@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body>
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+	<h3 style="color: black;background-color: indianred;padding: 10px;">
+			<a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/remitos">&emsp;Remitos&emsp;></a></span>
+		</h3>
+		<br></br>
+		<div class="container-fluid" id="form-div">
+			<form id="nuevoFormato" action="" method="post" autocomplete="off">
+				<div class="row">
+					<input th:value="${numeroDeRemito}" id="nroRemito" name="numeroDeRemito" type="text" class="form-control posicionF" placeholder="*Numero de Remito"></input>
+					<input th:value="${fecha}" id="fechaRemito" name="fecha" type="text" class="formatoURL form-control formato" placeholder="*Fecha"></input>
+					<div class="guardar">
+						<input type="submit" value="GUARDAR" id="button-blue"/>
+						<div class="ease"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>                        

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black;background-color: indianred;padding: 10px;"><a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/remitos">&emsp;Remitos&emsp;></a></span><span><a style="text-decoration:none;" href="/remitos/imprimirRemito">&emsp;Nuevo Remito&emsp;></a></span></h3>
+		<br></br>
+	<!-- Agregar clase cliente y clase obra  -->
+	<h4>&nbsp;&nbsp;&nbsp;&nbsp;Complete los datos del remito. (*) Campos obligatorios.</h4>
+		<div class="container-fluid" id="form-div">
+			<form id="nuevoCliente" action="" method="post" class="form" autocomplete="off" onsubmit="return nroDeRemito();">
+				<input style="background-color:white;" th:value="${fechaRemito}" id="fechaRemito" name="fechaRemito" type="text" class="validate[required,custom[email]] feedback-input" placeholder="*Fecha" required = ""></input>
+				<input style="background-color:white;" th:value="${nroRemito}" id="nroRemito" name="nroRemito" type="text" class="validate[required,custom[email]] feedback-input" placeholder="*Numero de Remito" required = ""></input>
+				<select th:value="${cantidad}" id="cantidadInputs" name="cantidad" type="text" class="validate[required,custom[email]] feedback-input" placeholder="*Cantidad">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+				</select>
+				<select name="cliente" th:value="${cliente}" type="text" class="validate[required,custom[email]] feedback-input cliente1" id="nombredefantasiaRemito" placeholder="*Cliente">
+					<option th:each="cli : ${lisClientes}" th:text="${cli.nombreFantasia}"></option>
+				</select>
+				<select name="obra" th:value="${obra}" type="text" class="validate[required,custom[email]] feedback-input obra1" id="nombreObra" placeholder="*Obra">
+					<option th:each="ob : ${listaObras}" th:text="${ob.nombreDeObra}"></option>
+				</select>
+				<select name="pedUno" th:value="${pedUno}" type="text" class="validate[required,custom[email]] feedback-input pedido1" id="pedUno" placeholder="*Pedido 1" required = "">
+					<option th:each="p : ${listaPedidos}" th:text="${p.codigo}"></option>
+				</select>
+				<select name="pedDos" th:value="${pedDos}" type="hidden" class="validate[required,custom[email]] feedback-input pedido1 oculto" id="pedDos" placeholder="*Pedido 2">
+					<option th:each="p : ${listaPedidos}" th:text="${p.codigo}"></option>
+				</select>
+				<select name="pedTres" th:value="${pedTres}" type="hidden" class="validate[required,custom[email]] feedback-input pedido1 oculto" id="pedTres" placeholder="*Pedido 3">
+					<option th:each="p : ${listaPedidos}" th:text="${p.codigo}"></option>
+				</select>
+				<textarea name="obserRem" th:value="${obserRem}" id="obserRem" class="validate[required,custom[email]] feedback-input" rows="4" cols="50" placeholder="Observaciones"></textarea>
+				<textarea name="remitimosAUd" th:value="${remitimosAUd}" id="remitimosAUd" class="validate[required,custom[email]] feedback-input" rows="4" cols="50" placeholder="Remitimos a usted lo siguiente:"></textarea>
+				<div class="guardar">
+					<input type="submit" value="GUARDAR" id="button-blue" class="botonRemito"></input>
+					<div class="ease"></div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>               

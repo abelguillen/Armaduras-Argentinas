@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black; background-color: indianred; padding: 10px;">
+			<a style="text-decoration: none;" href="/">Home&emsp;></a><span><a
+				style="text-decoration: none;" href="/cliente">&emsp;Clientes /
+					Obras</a></span>
+		</h3>
+		<br></br>
+		<h4>&nbsp;&nbsp;Seleccione al usuario y el tipo de permiso que desea otorgarle:</h4>
+		<div class="col-md-4"></div>
+		<div class="col-md-3">
+			<form action="" method="post" class="form">
+				<select name="usuario" th:value="${usuario}" type="text"
+					class="validate[required,custom[email]] feedback-input"
+					placeholder="Usuario">
+					<option th:each="usu : ${lisUsuarios}"
+						th:text="${usu.Nombre} + ' ' + ${usu.Apellido}"></option>
+				</select> <select name="tipoUsuario" th:value="${tipoUsuario}" type="text"
+					class="validate[required,custom[email]] feedback-input"
+					placeholder="Usuario">
+					<option>PROGRAMADOR</option>
+					<option>ETIQUETADOR</option>
+					<option>OBRAS</option>
+					<option>CLIENTES</option>
+					<option>ADMIN</option>
+				</select>
+				<div class="guardar">
+					<input type="submit" value="GUARDAR" id="button-blue" />
+					<div class="ease"></div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>

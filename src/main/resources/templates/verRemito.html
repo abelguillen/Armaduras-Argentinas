@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Armaduras Argentinas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'></link>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'></link>
+<link rel="stylesheet" href="/css/styleRemito.css"></link>
+<script src="js/modernizr-2.6.2.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo_aa_ico.ico"></link>
+</head>
+<body style="background-color:#7d7c7c;">
+	<div class="medidasRemito">
+		<p id="fecha"><span th:text="${fechaRemito}"></span></p>
+		<p id="nombreCliente"><span th:text="${cliente}"></span></p>
+		<p id="domicilioObra"><span th:text="${domicilio}"></span></p>
+		<p id="cuit"><span th:text="${cuil}"></span></p>
+		<div class="marco">
+			<table>
+				<tr>
+					<td>&nbsp;</td>
+					<td class="col2"><span th:text="'PEDIDO: ' + ${CodigoDePedido1}"></span></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<br></br>
+				<br></br>
+				<br></br>
+				<br></br>
+				<br></br>
+				<br></br>
+				<br></br>
+				<br></br>
+				<br></br>
+				<tr th:each="p1 : ${listaPedFormRem1}">
+					<td class="col1"><span th:text="${p1.codigo}"></span></td>
+					<td class="col2"><span th:text="${p1.descripcion}"></span></td>
+					<td class="col3"><span th:text="${p1.um}"></span></td>
+					<td class="col4"><span th:text="${p1.total}"></span></td>
+				</tr>
+				<tr>
+					<td><br></br></td>
+				</tr>
+				<tr th:if="${pedido2}==true">
+					<td>&nbsp;</td>
+					<td class="col2"><span th:text="'PEDIDO: ' + ${CodigoDePedido2}"> </span></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr th:each="p1 : ${listaPedFormRem2}">
+					<td class="col1"><span th:text="${p1.codigo}"></span></td>
+					<td class="col2"><span th:text="${p1.descripcion}"></span></td>
+					<td class="col3"><span th:text="${p1.um}"></span></td>
+					<td class="col4"><span th:text="${p1.total}"></span></td>
+				</tr>
+				<tr>
+					<td><br></br></td>
+				</tr>
+				<tr th:if="${pedido3}==true">
+					<td>&nbsp;</td>
+					<td class="col2"><span th:text="'PEDIDO: ' + ${CodigoDePedido3}"> </span></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr th:each="p1 : ${listaPedFormRem3}">
+					<td class="col1"><span th:text="${p1.codigo}"></span></td>
+					<td class="col2"><span th:text="${p1.descripcion}"></span></td>
+					<td class="col3"><span th:text="${p1.um}"></span></td>
+					<td class="col4"><span th:text="${p1.total}"></span></td>
+				</tr>
+			</table>
+		</div>
+		<p class="totalGlobal"><span th:text="${totalGlobal}"></span></p>
+	</div>
+</body>
+</html>

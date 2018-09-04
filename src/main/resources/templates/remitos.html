@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></meta>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black; background-color: indianred; padding: 10px;">
+			<a style="text-decoration: none;" href="/">Home&emsp;></a><span><a
+				style="text-decoration: none;" href="/remitos">&emsp;Remitos</a></span>
+		</h3>
+		<br></br>
+		<div class="container-fluid">
+			<div class="col-md-8">
+				<div id="menuL">
+					<ul>
+						<a id="idA" href="/cliente" style="text-decoration: none;"><li><img
+								src="/images/profle.png" alt="" width="70px"></img>CLIENTE /
+								OBRA</li></a>
+						<a id="idA" href="/oficinatecnica" style="text-decoration: none;"><li><img
+								src="/images/cart.png" alt="" width="70px"></img>OFICINA TECNICA</li></a>
+						<a id="idA" href="/remitos" style="text-decoration: none;"><li><img
+								src="/images/analytics.png" alt="" width="70px"></img>REMITOS</li></a>
+						<a id="idA" href="/materiaprima" style="text-decoration: none;"><li><img
+								src="/images/cuaderno.png" alt="" width="70px"></img>MATERIA
+								PRIMA</li></a>
+						<a id="idA" href="/administracion" style="text-decoration: none;"><li><img
+								src="/images/responsive.png" alt="" width="70px"></img>ADMINISTRACION</li></a>
+						<a id="idA" href="/inventario" style="text-decoration: none;"><li><img
+								src="/images/inventario.png" alt="" width="70px"></img>INVENTARIO</li></a>
+						<a id="idA" href="/maquina" style="text-decoration: none;"><li><img
+								src="/images/maquina.png" alt="" width="70px"></img>MAQUINA</li></a>
+					</ul>
+				</div>
+			</div>
+			<div id="paleta" class="col-md-4">
+				<h2 style="text-align: center; font-size: 2em;">Remitos</h2>
+				<ul class="list-unstyled">
+					<li id="cambiarcosas"><a href="/remitos/imprimirRemito"
+						style="padding-left: 20px; color: white;">Imprimir Remito</a></li>
+					<li id="cambiarcosas"><a href="/remitos/listaRemitos"
+						style="padding-left: 20px; color: white;">Lista de Remitos</a></li>
+					<li id="cambiarcosas"><a
+						href="/remitos/imprimirRemitoAcerBrag"
+						style="padding-left: 20px; color: white;">Imprimir Remito
+							AcerBrag</a></li>
+					<li id="cambiarcosas"><a href="/remitos/listaRemitosAcerBrag"
+						style="padding-left: 20px; color: white;">Lista de Remitos
+							AcerBrag</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+
+</html>

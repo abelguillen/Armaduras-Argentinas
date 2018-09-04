@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black;background-color: indianred;padding: 10px;"><a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/oficinatecnica">&emsp;Oficina Tecnica&emsp;></a></span><span><a style="text-decoration:none;" href="/programacion">&emsp;Programacion&emsp;></a></span><span><a style="text-decoration:none;" href="/programacion/pedido">&emsp;Nuevo Pedido</a></span></h3>
+		<br></br>
+	<!-- Agregar clase cliente y clase obra  -->
+	<h4>&nbsp;&nbsp;&nbsp;&nbsp;Complete los datos del pedido. (*) Campos obligatorios.</h4>
+		<div class="container-fluid" id="form-div">
+			<form id="nuevoCliente" action="" method="post" class="form" autocomplete="off">
+				<input id="datepicker" th:value="${entrega}" name="entrega" type="text" class="validate[required,custom[email]] feedback-input fecha fech" 
+				placeholder="*DDMMAAAA" readonly="readonly" required = ""></input>
+				<select name="cliente" th:value="${cliente}" type="text" class="validate[required,custom[email]] feedback-input cliente" id="nombredefantasia" placeholder="*Cliente">
+					<option th:each="cli : ${lisClientes}" th:text="${cli.nombreFantasia}"></option>
+				</select>
+				<select name="obra" th:value="${obra}" type="text" class="validate[required,custom[email]] feedback-input obra" id="nombredefantasia" placeholder="*Obra">
+					<option th:each="ob : ${listaObras}" th:text="${ob.nombreDeObra}"></option>
+				</select>
+				<input th:value="${descripcion}" name="descripcion" type="text"
+				class="validate[required,custom[email]] feedback-input descrip" placeholder="*Descripcion" required = ""></input>
+				<select th:value="${tipo}" id="tipoPedido" name="tipo" class="validate[required,custom[email]] feedback-input" required = "">
+					<option th:text="${tipo}"></option>
+					<option>Armado</option>
+					<option>Barras</option>
+					<option>CyD</option>
+					<option>Pilote</option>
+					<option>Cortado</option>
+				</select>
+				<input style="display:none;" th:value="${elementos}" id="elementos" name="elementos" type="number" class="validate[required,custom[email]] feedback-input 4" placeholder="Elementos"></input>
+				<input th:value="${cuatrocomados}" name="cuatrocomados" type="text" class="validate[required,custom[email]] feedback-input 4" placeholder="4,2"></input> 
+				<input th:value="${seis}" name="seis" type="text" class="validate[required,custom[email]] feedback-input 6" placeholder="6"></input> 
+				<input th:value="${ocho}" name="ocho" type="text" class="validate[required,custom[email]] feedback-input 8"
+				placeholder="8"></input> 
+				<input th:value="${diez}" name="diez" type="text" class="validate[required,custom[email]] feedback-input 10" placeholder="10"></input> 
+				<input th:value="${doce}" name="doce" type="text" class="validate[required,custom[email]] feedback-input 12"
+				placeholder="12"></input> 
+				<input th:value="${dieciseis}" name="dieciseis" type="text" class="validate[required,custom[email]] feedback-input 16" placeholder="16"></input>
+				<input th:value="${veinte}" name="veinte" type="text" class="validate[required,custom[email]] feedback-input 20" placeholder="20"></input> 
+				<input th:value="${veinticinco}" name="veinticinco" type="text" class="validate[required,custom[email]] feedback-input 25" placeholder="25"></input> 
+				<input th:value="${treintaydos}" name="treintaydos" type="text" class="validate[required,custom[email]] feedback-input 32" placeholder="32"></input>
+				<input th:value="${otros}" name="otros" type="text" class="validate[required,custom[email]] feedback-input 32" placeholder="OTROS"></input>
+				<input th:value="${oc}" name="oc" type="text" class="validate[required,custom[email]] feedback-input oc" placeholder="OC"></input>
+				<div class="guardar">
+					<input type="submit" value="GUARDAR" id="button-blue"></input>
+					<div class="ease"></div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>

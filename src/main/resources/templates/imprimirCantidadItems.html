@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title th:text="${pedido.cliente + ' - '  + pedido.obra  + ' - '  + pedido.pedido + ' - '  + 'Armaduras Argentina'}"></title>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500'
+	rel='stylesheet' type='text/css'></link>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
+	rel='stylesheet' type='text/css'></link>
+<link rel="stylesheet" href="/css/style.css"></link>
+<script src="js/modernizr-2.6.2.min.js"></script>
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+<link rel="shortcut icon" type="image/x-icon"
+	href="/images/logo_aa_ico.ico"></link>
+<style type="text/css">
+
+.polig {
+	color:black;
+
+	border: black 2px solid;
+	height: 70px;
+	background: white;
+	font-family: arial;
+	font-weight: bold;
+	font-size:20px;
+}
+
+</style>
+
+
+
+</head>
+<body style="background-color: #7d7c7c" onload="window.print()">
+
+			<div class=" container-fluid row ">
+	<div class="listaItems" th:each="item : ${listaItems}">
+
+
+
+				<div class=" col-xs-2 col-sm- 3 col-md-4 .col-lg-6 polig" th:text=" ${item.codigo}">
+				</div>
+			</div>
+
+
+		<!--BODY-->
+
+	</div>
+</body>
+</html>

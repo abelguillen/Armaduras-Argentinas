@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include = "layoutPrincipal :: head"></head>
+<body>
+<header th:include = "layoutPrincipal :: header"></header>
+<section>
+    <h3 style="color: black;background-color: indianred;padding: 10px;" class="nav"><a href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/cliente">&emsp;Clientes / Obras&emsp;></a></span><span><a style="text-decoration:none;" href="/cliente/listadeclientes">&emsp;Lista de Clientes</a></span></h3>
+	<br></br>
+    <div class="container-fluid" id="form-div">
+		<form id="nuevoCliente" th:action="'/cliente/modificar/'+${id}" method="post" class="form" autocomplete="off">
+					      <p class="numerodecuil">
+					        <input th:value="${codigo}" name="codigo" type="text" class="validate[required,custom[email]] feedback-input codigo" placeholder="Codigo" id="ndc" required=""></input>
+					      </p>
+					      <p class="numerodecuil">
+					        <input th:value="${nroCuil}" name="nroCuil" type="text" class="validate[required,custom[email]] feedback-input nro_cuilCliente" placeholder="Numero de CUIL" id="ndc" required=""></input>
+					      </p>
+					      
+					      <p class="nombredefantasia">
+					        <input th:value="${nombreFantasia}" name="nombreFantasia" type="text" class="validate[required,custom[email]] feedback-input nombreFantasia" id="nombredefantasia" placeholder="Nombre de Fantasia" required=""/>
+					      </p>
+
+					      <p class="razonsocial">
+					        <input th:value="${razonSocial}" name="razonSocial" class="validate[required,custom[email]] feedback-input razonSocial" id="rs" placeholder="Razon Social" required=""/>
+					      </p>
+					      <p class="direccionfiscal">
+					        <input th:value="${direccionFiscal}" name="direccionFiscal" type="text" class="validate[required,custom[email]] feedback-input dirfiscal" id="df" placeholder="Direccion Fiscal" required=""/>
+					      </p>
+					      <p class="Telefono">
+					        <input th:value="${telefono}" name="telefono" type="text" class="validate[required,custom[email]] feedback-input telefono" id="tel" placeholder="Telefono" />
+					      </p>
+					      
+					      <div class="guardar">
+					        <input type="submit" value="GUARDAR" id="button-blue"/>
+					        <div class="ease"></div>
+					      </div>
+		</form>
+	</div>
+</section>
+<footer th:include = "layoutPrincipal :: footer"></footer>
+</body>
+
+</html>

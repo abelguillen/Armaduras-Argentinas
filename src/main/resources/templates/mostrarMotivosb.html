@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="layoutPrincipal :: head"></head>
+<body>
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black;background-color: indianred;padding: 10px;">
+			<a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/oficinatecnica">&emsp;Oficina
+			Tecnica&emsp;></a></span><span><a style="text-decoration:none;" href="/productos">&emsp;Etiquetado&emsp;></a></span><span><a style="text-decoration:none;" href="/etiquetado/pedidos">&emsp;Ver Pedidos</a></span>
+		</h3>
+		<br></br>
+		<div class="container-fluid">
+			<table id="myTable" class="display" cellspacing="0" width="60%">
+				<thead>
+					<tr>
+						<th width="20%">FECHA DEL CAMBIO</th>
+						<th>MOTIVO DEL CAMBIO</th>
+						<th width="10%">ELIMINAR</th>
+					</tr>
+					</thead>
+				<tbody>
+					<tr>
+						<td><span th:text="${fecha}" class="id"> </span></td>
+						<td><span th:text="${motivo}"> </span></td>
+						<td><a th:href="'/motivos/eliminar/'+${id}" style="color:red"><span class="glyphicon glyphicon-remove"></span></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+
+</html>

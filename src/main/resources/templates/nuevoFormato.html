@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head">	</head>
+<body class="container-fluid">
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black; background-color: indianred; padding: 10px;">
+			<a style="text-decoration: none;" href="/">Home&emsp;></a><span><a
+				style="text-decoration: none;" href="/oficinatecnica">&emsp;Oficina
+					Tecnica&emsp;></a></span><span><a style="text-decoration: none;"
+				href="/productos">&emsp;Etiquetado&emsp;></a></span><span><a
+				style="text-decoration: none;" href="/productos/nuevoFormato">&emsp;Nuevo
+					Formato</a></span>
+		</h3>
+		<br></br>
+		<h4>&nbsp;&nbsp;&nbsp;&nbsp;Complete los datos del formato. (*)
+			Campos obligatorios.</h4>
+		<div class="container-fluid" id="form-div">
+			<form id="nuevoFormato" action="" method="post" autocomplete="off">
+				<div class="row">
+					<p>
+						<input id="posicionFormato" th:value="${posicion}" name="posicion" type="text"
+							class="form-control posicionF" placeholder="*Posicion"></input>
+					</p>
+					<p>
+						<input id="ocultar" th:value="${formato}" name="formato"
+							type="text" class="formatoURL form-control formato"
+							placeholder="*Formato"></input>
+					</p>
+					<img
+						style=" display:none ; padding-left: 36%; padding-bottom: 3%; padding-right: 10%;"
+						src="" class="srcFormato" />
+					<script type="text/javascript"
+						src="//api.filestackapi.com/filestack.js"></script>
+					<p>
+						<input th:value="${lados}" name="lados" type="text"
+							class="form-control lados" placeholder="*Lados"> </input>
+					</p>
+					<p>
+						<input th:value="${cant_doblados}" name="cant_doblados"
+							type="text" class="form-control cant_doblados"
+							placeholder="*Cantidad de doblados"> </input>
+					</p>
+					<div style="margin-left: 35%;">
+						<p>
+							<input type="filepicker" data-fp-apikey="AaAHNYtqSxGTajwpoGdLwz"
+								onchange="llegoUrl(event.fpfile.url)"></input>
+						</p>
+					</div>
+					<div class="guardar">
+						<p>
+							<input type="submit" value="GUARDAR" id="button-blue" />
+						</p>
+						<div class="ease"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+</html>

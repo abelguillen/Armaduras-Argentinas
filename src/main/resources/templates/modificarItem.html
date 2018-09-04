@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="layoutPrincipal :: head"></head>
+<body>
+	<header th:include="layoutPrincipal :: header"></header>
+	<section>
+		<h3 style="color: black;background-color: indianred;padding: 10px;"><a style="text-decoration:none;" href="/">Home&emsp;></a><span><a style="text-decoration:none;" href="/oficinatecnica">&emsp;Oficina Tecnica&emsp;></a></span><span><a style="text-decoration:none;" href="/programacion">&emsp;Programacion&emsp;></a></span><span><a style="text-decoration:none;" href="/programacion/pedidos">&emsp;Ver Pedidos</a></span></h3>
+		<br></br>
+		<div class="container-fluid" id="form-div">
+			<form id="modificarItem" action="" method="post" autocomplete="off">
+				<div class="row">
+					<input th:value="${estructura}" name="estructura" type="text" class="form-control estructura" placeholder="  Estructura" required = ""></input> 
+					<input th:value="${posicion}" name="posicion" type="text" class="form-control posicion" placeholder="  Posicion" required = ""></input> 
+					<input th:value="${acero}" name="acero" class="validate[required,custom[email]] feedback-input" placeholder="*Acero" required = ""></input>
+						<!--<option th:text="${acero}"></option>
+						<option>ADN420S</option>
+						<option>ADN420</option>
+						<option>AL220</option>
+						<option>ATR500</option>
+						<option>ANGULOS</option>
+						<option>CLAVOS</option>
+						<option>ALAMBRES</option>
+						<option>ALAMBRON</option>-->
+				<!--<select id="material" th:value="${material}" name="material" class="validate[required,custom[email]] feedback-input" placeholder="*Material" required = "">
+					<option th:text="${material}"></option>
+					<option>ROLLO</option>
+					<option>BARRA</option>
+					<option>ANGULOS</option>
+					<option>ALAMBRES</option>
+					<option>CLAVOS</option>
+					<option>VARIOS</option>
+				</select>-->
+					<input style="background-color:white;" th:value="${diametro}" name="diametro" type="text" class="form-control diametro" placeholder="  Diametro" id="diametro"></input>
+					<input th:value="${cantidad}" name="cantidad" type="text" class="form-control cantidad" placeholder="  Cantidad"></input> 
+					<input th:value="${formato}" name="formato" type="text" class="form-control formato" placeholder="  Formato" id="FORMATO"></input>
+					<input type="hidden" th:value="${dibujo}" name="dibujo"	class="form-control" placeholder="  Dibujo" id="dibujo"></input> 
+					<img th:src="${dibujo}" id="dibujo"  /> 
+					<input
+						th:value="${a}" name="a" type="text" class="form-control 1"
+						placeholder="  A"></input> <input th:value="${b}" name="b"
+						type="text" class="form-control 2" placeholder="  B"></input> <input
+						th:value="${c}" name="c" type="text" class="form-control 3"
+						placeholder="  C"></input> <input th:value="${d}" name="d"
+						type="text" class="form-control 4" placeholder="  D"></input> <input
+						th:value="${e}" name="e" type="text" class="form-control 5"
+						placeholder="  E"></input> <input th:value="${f}" name="f"
+						type="text" class="form-control 6" placeholder="  F"></input> <input
+						th:value="${g}" name="g" type="text" class="form-control 7"
+						placeholder="  G"></input> <input th:value="${h}" name="h"
+						type="text" class="form-control 8" placeholder="  H"></input> <input
+						th:value="${h1}" name="h1" type="text" class="form-control"
+						placeholder="  H1"></input> <input th:value="${h2}" name="h2"
+						type="text" class="form-control" placeholder="  H2"></input> <input
+						th:value="${observaciones}" name="observaciones" type="text"
+						class="form-control observaciones" placeholder="  Observaciones"></input>
+					<div class="guardar">
+						<input type="submit" value="GUARDAR" id="button-blue" />
+						<div class="ease"></div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer th:include="layoutPrincipal :: footer"></footer>
+</body>
+
+</html>
